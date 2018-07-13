@@ -7,7 +7,7 @@
 
 body {
 	background: #8EC63B;
-  padding: 20px 60px;
+  padding: 20px;
   text-align: center;
 }
 
@@ -28,7 +28,7 @@ body {
   border-radius: 40%;
   cursor: pointer;
   outline: none;
-  margin: 20px 7px;
+  margin: 20px 15px;
   background: #ffcc00;
   border: 3px solid #F9911A;
   font-size: 20px;
@@ -41,14 +41,10 @@ body {
   color: #8EC63B;
 }
 
-/* #btn-container .fas {
-} */
-
 #main-container {
-	/* margin: 0 auto; */
 	background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('./src/img/back.jpg');
 	background-size: contain;
-  width: 100%;
+  width: calc(100% - 160px);
   max-width: 1000px;
 	min-height: 570px;
 	border-radius: 20px;
@@ -57,16 +53,19 @@ body {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   padding: 15px 50px;
   display: inline-block;
+  vertical-align: top;
   text-align: left;
+  margin-right: 80px;
 }
 
 #main-letter {
 	font-size: 350px;
 	line-height: 1;
-	padding: 20px 20px 0;
+	padding: 20px 0;
 	color: #F9911A;
   text-shadow: 5px 3px 0px #8EC63B;
   min-height: 400px;
+  min-width: 350px;
 }
 
 #buttons-container {
@@ -109,9 +108,14 @@ body {
 	text-align: center;
 }
 
+#picture {
+  width: calc(100% - 410px);
+  vertical-align: middle;
+}
+
 #picture img {
-  height: 200px;
-	/* width: 400px; */
+  height: 250px;
+  margin-bottom: 30px;
 }
 
 #word {
@@ -120,7 +124,7 @@ body {
 	line-height: 1;
 	margin: 0;
 	color: #4a3faf;
-	text-shadow: 0 0 3px rgba(200, 200, 200, 1);
+	text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 #word span {
