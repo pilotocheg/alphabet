@@ -1,10 +1,25 @@
 import React from 'react';
 import LetterBtn from './letter-btn';
+import GameBtn from './game-btn';
+import SoundBtn from './sound-btn';
+import AbcBtn from './abc-btn';
 import MainLetter from './main-letter';
 import Pic from './pic';
 import Word from './word';
 import mainData  from '../main_data';
 import images from '../../images/*';
+
+export class BtnContainer extends React.Component {
+  render() {
+    return (
+      <div id="btn-container">
+        <AbcBtn />
+        <SoundBtn />
+        <GameBtn />
+      </div>
+    )
+  }
+}
 
 
 export default class MainContainer extends React.Component {
