@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainContainer from './components/main-container';
+import MainApp from './components/main-app';
+import ControlBtns from './components/control-btns';
 
 ReactDOM.render(
-  <MainContainer />,
+  <div id="main-div">
+    <ControlBtns />
+    <MainApp />
+  </div>,
   document.getElementById('root')
 )

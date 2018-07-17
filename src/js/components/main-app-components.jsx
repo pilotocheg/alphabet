@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class LetterBtn extends React.Component {
+export class LetterBtn extends React.Component {
   constructor() {
     super();
 
@@ -27,6 +27,35 @@ export default class LetterBtn extends React.Component {
       >
         { this.state.letterValue }
       </button>
+    )
+  }
+}
+
+export class MainLetter extends React.Component{
+  render() {
+    return (
+      <div id="main-letter">
+        { this.props.bigLetter }
+      </div>
+    )
+  }
+}
+
+export class Pic extends React.Component{
+  render() {
+    return (
+      <img src={ this.props.src }/>
+    )
+  }
+}
+
+export class Word extends React.Component{
+  render() {
+    return (
+      <p 
+        id="word" 
+        dangerouslySetInnerHTML={ { __html: this.props.word } }
+      ></p>
     )
   }
 }
