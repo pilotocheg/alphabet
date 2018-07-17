@@ -11,7 +11,7 @@ export default class GameBtn extends React.Component{
   render() {
     return (
       <button 
-      onClick={ this.props.changeMode(this.state.mode) }
+      // onClick={ this.props.changeAppMode(this.state.mode) }
       id="game">
         <i className="fas fa-gamepad"></i>
       </button>

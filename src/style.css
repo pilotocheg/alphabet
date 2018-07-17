@@ -42,7 +42,7 @@ body {
 }
 
 #main-container {
-	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./src/img/back.jpg');
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./img/back.jpg');
 	background-size: contain;
   width: calc(100% - 160px);
   max-width: 1000px;

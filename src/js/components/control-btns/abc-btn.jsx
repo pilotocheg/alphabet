@@ -12,7 +12,7 @@ export default class AbcBtn extends React.Component{
   render() {
     return (
       <button 
-      onClick={ this.props.changeAppMode(this.state.mode) }
+      // onClick={ this.props.changeAppMode(this.state.mode) }
       id="abc">
         <i className="fas fa-book-open"></i>
       </button>

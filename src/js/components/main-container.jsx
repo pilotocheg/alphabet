@@ -8,6 +8,8 @@ import Pic from './pic';
 import Word from './word';
 import mainData  from '../main_data';
 import images from '../../images/*';
+// import sounds from '../../sounds/*';
+// import { main_sound } from '../../sounds/main_sound';
 
 export default class MainContainer extends React.Component {
   constructor() {
@@ -48,8 +50,8 @@ export default class MainContainer extends React.Component {
       <div id="main-div">
         <div id="btn-container">
           <SoundBtn changeSound={ this.changeSound.bind(this) } />
-          {/* <AbcBtn changeAppMode={ this.changeAppMode.bind(this) } /> */}
-          {/* <GameBtn changeMode={ this.changeMode.bind(this) } /> */}
+          <AbcBtn changeAppMode={ this.changeAppMode.bind(this) } />
+          <GameBtn changeAppMode={ this.changeAppMode.bind(this) } />
         </div>
         <div id="main-container">
           <MainLetter bigLetter={ this.state.letter }/>
