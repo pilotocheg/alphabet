@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainApp from './components/main-app';
+import LearnApp from './components/learn-app';
 import ControlBtns from './components/control-btns';
+// import { BrowserRouter as Route, Switch } from "react-router-dom";
 
 ReactDOM.render(
   <div id="main-div">
     <ControlBtns />
-    <MainApp />
+    <LearnApp />
   </div>,
   document.getElementById('root')
 )

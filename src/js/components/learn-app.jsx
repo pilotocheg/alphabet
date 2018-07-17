@@ -1,8 +1,5 @@
 import React from 'react';
-import { LetterBtn, MainLetter, Pic, Word } from './main-app-components';
-// import MainLetter from './main-app-components';
-// import Pic from './main-app-components';
-// import Word from './word';
+import { LetterBtn, MainLetter, Pic, Word } from './learn-app-components';
 import mainData  from '../main_data';
 import images from '../../images/*';
 // import sounds from '../../sounds/*';
