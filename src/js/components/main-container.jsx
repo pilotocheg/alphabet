@@ -13,7 +13,10 @@ export default class MainContainer extends React.Component {
   constructor() {
     super();
 
-    this.state = {}
+    this.state = {
+      mode: 'learn',
+      isSound: true
+    }
   }
   
   getValues(letter, picName, word) {
@@ -25,13 +28,28 @@ export default class MainContainer extends React.Component {
     })
   }
 
+  changeAppMode(modeName) {
+    this.setState({
+      mode: modeName
+    })
+  }
+
+  changeSound() {
+    this.setState({
+      isSound: !this.state.isSound
+    }, () => {
+      console.log(this.state.isSound);
+      
+    })
+  }
+
   render() {
     return(
       <div id="main-div">
         <div id="btn-container">
-          <AbcBtn />
-          <SoundBtn />
-          <GameBtn />
+          <SoundBtn changeSound={ this.changeSound.bind(this) } />
+          {/* <AbcBtn changeAppMode={ this.changeAppMode.bind(this) } /> */}
+          {/* <GameBtn changeMode={ this.changeMode.bind(this) } /> */}
         </div>
         <div id="main-container">
           <MainLetter bigLetter={ this.state.letter }/>
