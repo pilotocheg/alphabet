@@ -8,7 +8,7 @@ export class StartDiv extends React.Component {
       translateY: 0
     }
   }
-  componentDidMount() {
+  componentWillMount() {
     this.interval = setInterval(() => {
       this.setState({
         translateY: this.state.translateY + 0.5
