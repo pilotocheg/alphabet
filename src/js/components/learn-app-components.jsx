@@ -53,7 +53,8 @@ export class Word extends React.Component{
   render() {
     return (
       <p 
-        id="word" 
+        id={this.props.id}
+        className="word" 
         dangerouslySetInnerHTML={ { __html: this.props.word } }
       ></p>
     )

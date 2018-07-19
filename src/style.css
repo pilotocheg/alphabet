@@ -52,11 +52,12 @@ body {
 	border: 3px solid #F9911A;
 	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  padding: 30px 50px 15px;
+  padding: 15px 50px 15px;
   display: inline-block;
   vertical-align: top;
   text-align: left;
   margin-right: 80px;
+  position: relative;
 }
 
 .main-letter {
@@ -124,7 +125,7 @@ body {
   margin-bottom: 30px;
 }
 
-#word {
+.word {
 	font-size: 60px;
 	font-weight: 700;
 	line-height: 1;
@@ -133,13 +134,24 @@ body {
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
-#word span {
+.word span {
 	color: #e52783;
 }
 
-/* game app styles */
+#game-letter-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
 
-/* .main-container.for-game  */
+#game-word {
+  position: absolute;
+  left: 50%;
+  bottom: -50px;
+  transform: translateX(-50%);
+}
+
+/* game app styles */
 
 #game-letter {
   text-shadow: 8px 8px 0px #8EC63B;
@@ -151,11 +163,13 @@ body {
 }
 
 #pics-container img {
-  width: 200px;
-  max-height: 250px;
+  max-width: 230px;
+  max-height: 240px;
   margin: 15px;
   cursor: pointer;
   transition: transform .2s;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.0);
 }
 
 #pics-container img:hover {
@@ -171,12 +185,12 @@ body {
   margin: 0 auto;
   background-color: #fff;
   border: 2px solid #F9911A;
-  padding: 15px;
+  padding: 15px 30px;
   border-radius: 10px;
 }
 
 #start-div-header {
-  margin: 0;
+  margin: 0 0 17px;
   color: #F9911A;
   text-shadow: 2px 2px 0px #8EC63B;
   font-size: 50px;
@@ -184,8 +198,13 @@ body {
 }
 
 #start-div-text {
-  font-size: 17px;
-  font-weight: 500;
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #8EC63B;
+  font-style: italic;
+  /* -webkit-text-stroke: 0.2px #8EC63B; */
+  text-align: justify;
 }
 
 #start-btn {
@@ -207,4 +226,16 @@ body {
 #start-btn:hover {
   border: 3px solid #d12a7b;
   color: #d12a7b;
+}
+
+#stars-div {
+  position: absolute;
+  left: 20px;
+  /* transform: translateX(-50%); */
+  bottom: 20px;
+  /* opacity: 0; */
+}
+
+.game-stars {
+  width: 60px;
 }

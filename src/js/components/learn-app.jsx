@@ -30,7 +30,7 @@ export default class LearnApp extends React.Component {
         <MainLetter id="learn-letter" bigLetter={ this.state.letter }/>
         <div id="picture">
           <Pic src={ this.state.picName }/>
-          <Word word={ this.state.word }/>
+          <Word id="learn-word" word={ this.state.word }/>
         </div>
         <div id="buttons-container">
           { mainData.map((el) => {
