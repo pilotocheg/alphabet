@@ -34,6 +34,7 @@ body {
   font-size: 20px;
   line-height: 1;
   color: white;
+  transition: border-color .3s, color .3s;
 }
 
 #btn-container button:hover {
@@ -41,7 +42,7 @@ body {
   color: #d12a7b;
 }
 
-#main-container {
+.main-container {
 	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./img/back.jpg');
 	background-size: contain;
   width: calc(100% - 160px);
@@ -51,14 +52,14 @@ body {
 	border: 3px solid #F9911A;
 	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  padding: 15px 50px;
+  padding: 30px 50px 15px;
   display: inline-block;
   vertical-align: top;
   text-align: left;
   margin-right: 80px;
 }
 
-#main-letter {
+.main-letter {
 	font-size: 350px;
 	line-height: 1;
 	padding: 20px 0;
@@ -66,6 +67,8 @@ body {
   text-shadow: 5px 3px 0px #8EC63B;
   min-height: 400px;
   min-width: 350px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 #buttons-container {
@@ -132,4 +135,76 @@ body {
 
 #word span {
 	color: #e52783;
+}
+
+/* game app styles */
+
+/* .main-container.for-game  */
+
+#game-letter {
+  text-shadow: 8px 8px 0px #8EC63B;
+}
+
+#pics-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#pics-container img {
+  width: 200px;
+  max-height: 250px;
+  margin: 15px;
+  cursor: pointer;
+  transition: transform .2s;
+}
+
+#pics-container img:hover {
+  transform: scale(1.05);
+}
+
+#pics-container img:last-child {
+  display: block;
+  margin: 0 auto;
+}
+#start-div {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 2px solid #F9911A;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#start-div-header {
+  margin: 0;
+  color: #F9911A;
+  text-shadow: 2px 2px 0px #8EC63B;
+  font-size: 50px;
+  text-align: center;
+}
+
+#start-div-text {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+#start-btn {
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 3px solid #F9911A;
+  border-radius: 5px;
+  outline: none;
+  background-color: #ffcc00;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: border-color .3s, color .3s;
+}
+
+#start-btn:hover {
+  border: 3px solid #d12a7b;
+  color: #d12a7b;
 }

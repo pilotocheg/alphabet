@@ -34,7 +34,7 @@ export class LetterBtn extends React.Component {
 export class MainLetter extends React.Component{
   render() {
     return (
-      <div id="main-letter">
+      <div className="main-letter" id={this.props.id}>
         { this.props.bigLetter }
       </div>
     )

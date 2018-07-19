@@ -5,7 +5,7 @@ import images from '../../images/*';
 // import sounds from '../../sounds/*';
 // import { main_sound } from '../../sounds/main_sound';
 
-export default class MainApp extends React.Component {
+export default class LearnApp extends React.Component {
   constructor() {
     super();
 
@@ -26,8 +26,8 @@ export default class MainApp extends React.Component {
 
   render() {
     return(
-      <div id="main-container">
-        <MainLetter bigLetter={ this.state.letter }/>
+      <div className="main-container">
+        <MainLetter id="learn-letter" bigLetter={ this.state.letter }/>
         <div id="picture">
           <Pic src={ this.state.picName }/>
           <Word word={ this.state.word }/>
