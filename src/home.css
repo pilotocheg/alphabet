@@ -1,0 +1,135 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'EB Garamond', serif;
+}
+
+body {
+	background: #8EC63B;
+  padding: 20px;
+  text-align: center;
+}
+
+#root {
+  margin: 0 auto;
+}
+#btn-container {
+  height: 100%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 20px;
+}
+
+#btn-container button {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  cursor: pointer;
+  outline: none;
+  margin: 20px 15px;
+  background: #ffcc00;
+  border: 3px solid #F9911A;
+  font-size: 20px;
+  line-height: 1;
+  color: white;
+}
+
+#btn-container button:hover {
+  border: 3px solid #d12a7b;
+  color: #d12a7b;
+}
+
+#main-container {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./img/back.jpg');
+	background-size: contain;
+  width: calc(100% - 160px);
+  max-width: 1000px;
+	min-height: 570px;
+	border-radius: 20px;
+	border: 3px solid #F9911A;
+	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  padding: 15px 50px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  margin-right: 80px;
+}
+
+#main-letter {
+	font-size: 350px;
+	line-height: 1;
+	padding: 20px 0;
+	color: #F9911A;
+  text-shadow: 5px 3px 0px #8EC63B;
+  min-height: 400px;
+  min-width: 350px;
+}
+
+#buttons-container {
+	text-align: center;
+}
+
+.letters {
+	display: inline-block;
+	margin: 5px;
+	background: #ffdd83;
+	border: 2px solid #F9911A;
+	border-radius: 5px;
+	width: 38px;
+	height: 40px;
+	font-size: 24px;
+	line-height: 1;
+	font-weight: 900;
+  /* color: #8b1e99; */
+  color: #d12a7b;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.753);
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+	/*text-shadow: 1px 1px 0px orange;*/
+}
+
+.letters:hover {
+  border: 2px solid #8b1e99;
+}
+
+.letters:active {
+  transform: translateY(3px);
+}
+
+.letters.yellow {
+	background: yellow;
+}
+
+#main-letter,
+#picture {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#picture {
+  width: calc(100% - 410px);
+  vertical-align: middle;
+}
+
+#picture img {
+  height: 250px;
+  margin-bottom: 30px;
+}
+
+#word {
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 1;
+	margin: 0;
+	color: #4a3faf;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+#word span {
+	color: #e52783;
+}
