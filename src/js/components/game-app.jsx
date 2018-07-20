@@ -14,14 +14,13 @@ export default class GameApp extends React.Component {
       isTrue: false,
       letter: '',
       counter: 0,
-      starsArr: [starImg, starImg, starImg]
+      starsArr: [starImg, starImg, starImg],
     }
   }
 
   handleStart() {
     if (this.state.counter === 3) {
-      console.log('ok');
-      this.setState({counter: 0});
+      this.setState({counter: 0, hideStars: false});
     }
     this.setState({ start: true });
     this.onGameStart();
@@ -32,7 +31,8 @@ export default class GameApp extends React.Component {
     setTimeout(() => {
       this.setState({
         start: false,
-        isTrue: false
+        isTrue: false,
+        hideStars: this.state.counter === 3
       })
     }, 3000)
   }
@@ -91,7 +91,9 @@ export default class GameApp extends React.Component {
           </div>
         }
         <div id="stars-div">
-          {
+          { 
+            this.state.hideStars
+            ||
             this.state.starsArr.map((img, i) => (
               <StarImg 
                 src={img} 

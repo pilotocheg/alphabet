@@ -1,4 +1,6 @@
 import React from 'react';
+import smilePic from '../../img/smile-pic.png';
+import starPic from '../../img/star.png';
 
 export class StartDiv extends React.Component {
   constructor() {
@@ -39,9 +41,12 @@ export class StartDiv extends React.Component {
               this.props.counter === 3 
               ?
               <div>
-                <p id="start-div-text">
-                  Вітаємо з перемогою!
-                </p>
+                <img id="smile-pic" src={smilePic} alt=""/>
+                <div id="stars-for-message">
+                  <img src={starPic} alt=""/>
+                  <img src={starPic} alt=""/>
+                  <img src={starPic} alt=""/>
+                </div>
                 <button id="start-btn" onClick={this.props.handleStart}>Грати ще раз</button>
               </div> 
               :
@@ -92,12 +97,32 @@ export class StarImg extends React.Component {
     super();
 
     this.state = {
-      opacity: 0
+      opacity: 0,
+      scale: 1,
     }
   }
+  transformAnimation() {
+    this.interval = setInterval(() => {
+        this.setState({
+          scale: this.state.scale += 0.01,
+        })
+      if (this.state.scale >= 1.3) {
+        clearInterval(this.interval);
+        this.setState({
+          scale: 1,
+          animDone: true
+        })
+      }
+    }, 15)
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.counter === this.props.ownNumber) {
-      this.setState({ opacity: 1 })
+      this.setState({ 
+        opacity: 1,
+      }, () => {
+        if (!this.state.animDone) this.transformAnimation();
+      })
     }
     if (!nextProps.counter) this.setState({opacity: 0})
   }
@@ -107,7 +132,10 @@ export class StarImg extends React.Component {
       <img 
         src={this.props.src} 
         className="game-stars"
-        style={{ opacity: this.state.opacity}}
+        style={{ 
+          opacity: this.state.opacity,
+          transform: `scale(${this.state.scale})`
+        }}
       />
     )
   }
