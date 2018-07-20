@@ -14,9 +14,6 @@ body {
 }
 .container {
 	width: 100%;
-	/*background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('./images/back.jpg');*/
-	/*background-repeat: repeat;*/
-	/*background-size: content;*/
 	padding: 0 100px;
 }
 
@@ -26,7 +23,7 @@ body {
 	position: relative;
 }
 
-header h1 {
+ h1 {
 	font-size: 80px;
 	font-weight: bold;
 	color: #F9911A;
@@ -46,11 +43,13 @@ header h1 {
 }
 
 #big-letter {
+	/*margin-bottom: 0;
+	padding: 0px;*/
 	z-index: 0;
 	line-height: 1;
 	font-size: 270px;
 	position: absolute;
-	color: #F9911A;
+	color: #F7711A;
 	top: -60px;
 	right: -90px;
 }
@@ -61,10 +60,63 @@ header h1 {
 
 }
 .title_primary {
-	margin: 0;
-	position: absolute;
+	line-height: 1;
+	margin: 0 auto;
+	/*padding-top: 0;*/
+	font-size: 36px;
+	color:  #f7711a;
+	text-align: left;
+	margin-left: 20px;
+	-webkit-text-stroke: 0.5px #8fC63B;
+	font-weight: 700;
 }
 
+.navigation {
+	text-align: right;
+	display: inline-block;
+	vertical-align: middle;
+	width: calc(100% - 700px);
+	position: relative;
+}
+.nav_link {
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #f7711a;
+	-webkit-text-stroke: 0.5px #8fC63B;
+	height: 52px;
+	line-height: 52px;
+	font-weight: 700;
+	transition: color .3s;
+	margin-left: 60px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.nav_link:hover {
+	color: #4a3faf;
+	border-bottom: 1px solid #4a3faf;
+	-webkit-text-stroke: 0px;
+	letter-spacing: 1;
+}
+a:hover span {
+	color: #d12a7b;
+}
+#link-1 {
+	position: absolute;
+	right: -400px;
+	top: -250px;
+}
+#link-2 {
+	position: absolute;
+	right: -500px;
+	top: -250px;
+}
+#link-3 {
+	position: absolute;
+	right: -650px;
+	top: -250px;
+}
 .content {
 	width: 100%;
 	position: relative;
@@ -80,7 +132,7 @@ header h1 {
 	margin-top: 0;
 }
 .content span {
-	color: #e52783;
+	color: #d12a7b;
 }
 
 .description, .images {
@@ -109,7 +161,7 @@ button {
 	text-transform: uppercase;
 	background-color: #F9911A;
 	color: #fff;
-	text-shadow: 2px 2px 3px #e52783;
+	text-shadow: 2px 2px 3px #d12a7b;
 	border: 4px solid #8EC63B;
 	font-size: 18px;
 	font-weight: 700;
@@ -121,10 +173,10 @@ button {
 	outline: none;
 	cursor: pointer;
 	transition: border-color .3s;
-	/*margin-bottom: 40px;*/
+	
 }
 button:hover {
-	border: 4px solid #8b1e99;
+	border: 4px solid #d12a7b;
 }
 
 .nav {
@@ -147,20 +199,4 @@ button:hover {
 	right: -70px;
 	top: 50%;
 	transform: translateY(-50%);
-}
-
-
-.footer {
-	background-color: #8EC63B;
-}
-
-.address, .call, .email {
-	display: inline-block;
-	vertical-align: middle;
-	padding: 10px 70px 25px;
-	
-}
-h3 {
-	color: #8b1e99;
-	text-shadow: 2px 2px 4px #f9911a;
 }
