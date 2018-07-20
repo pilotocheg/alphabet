@@ -1,7 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { soundTrack } from '../../sounds/music-track.mp3';
 
 export default class ControlBtns extends React.Component{
+  constructor() {
+    super();
+
+    this.sound = new Audio(soundTrack);
+  }
   render() {
     return (
       <div id="btn-container">
@@ -9,7 +15,10 @@ export default class ControlBtns extends React.Component{
           // onClick={ this.props.changeSound }
           id="sound"
         >
-          <i className="fas fa-volume-up"></i>
+
+            <i className="fas fa-volume-off"></i>
+            <i className="fas fa-volume-up"></i>
+          
         </button>
         <Link to="/learn">
           <button id="abc">
