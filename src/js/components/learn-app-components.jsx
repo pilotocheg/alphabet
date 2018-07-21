@@ -34,7 +34,7 @@ export class LetterBtn extends React.Component {
 export class MainLetter extends React.Component{
   render() {
     return (
-      <div id="main-letter">
+      <div className="main-letter" id={this.props.id}>
         { this.props.bigLetter }
       </div>
     )
@@ -53,7 +53,8 @@ export class Word extends React.Component{
   render() {
     return (
       <p 
-        id="word" 
+        id={this.props.id}
+        className="word" 
         dangerouslySetInnerHTML={ { __html: this.props.word } }
       ></p>
     )
