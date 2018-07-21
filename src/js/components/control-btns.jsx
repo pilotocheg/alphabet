@@ -30,6 +30,11 @@ export default class ControlBtns extends React.Component{
             <i className="fas fa-gamepad"></i>
           </button>
         </Link>
+        <Link to="/">
+          <button id="home">
+            <i class="fas fa-home"></i>
+          </button>
+        </Link>
       </div>
     )
   }

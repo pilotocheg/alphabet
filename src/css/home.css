@@ -1,23 +1,10 @@
-* {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
- 	box-sizing: border-box;
-  	font-family: 'EB Garamond', serif;
-	
-}
-body {
-	background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../img/back.jpg');
-	margin: 0 auto;
-	min-width: 950px;
-	overflow-x: hidden;
-	padding: 0;	
-}
 .container {
-	width: 100%;
-	/*background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('./images/back.jpg');*/
-	/*background-repeat: repeat;*/
-	/*background-size: content;*/
-	padding: 0 100px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../img/back.jpg');
+	background-repeat: repeat;
+	background-size: content;
+  width: 100%;
+  height: 100vh;
+	padding: 0 80px;
 }
 
 .s_width {
@@ -32,7 +19,7 @@ header {
 }
 
 header h1 {
-	font-size: 80px;
+	font-size: 70px;
 	font-weight: bold;
 	color: #F9911A;
 	text-shadow: 5px 3px 0px #8EC63B; 
@@ -40,29 +27,28 @@ header h1 {
 	position: relative;
 	letter-spacing: 0;
 	line-height: 1;
-	margin: 30px 0 60px;
+	margin: 30px 0;
 }
 .stroke {
 	position: relative;
 	z-index: 5;
-	font-size: 83px;
+	font-size: 71px;
 	-webkit-text-stroke: 1px white;
-	text-stroke: 1px white;
 }
 
 #big-letter {
 	z-index: 0;
 	line-height: 1;
-	font-size: 270px;
+	font-size: 240px;
 	position: absolute;
-	color: #F9911A;
+	color: #f7711a;
 	top: -60px;
-	right: -90px;
+	right: -85px;
 }
 
 #second-word {
 	position: relative;
-	right: -290px;
+	right: -260px;
 
 }
 
@@ -79,11 +65,8 @@ header h1 {
 }
 
 .navigation {
-	text-align: right;
-	display: inline-block;
-	vertical-align: middle;
-	width: calc(100% - 700px);
-	position: relative;
+  float: right;
+  margin-top: 30px;
 }
 .nav_link {
 	font-size: 20px;
@@ -92,13 +75,12 @@ header h1 {
 	text-decoration: none;
 	color: #f7711a;
 	-webkit-text-stroke: 0.5px #8fC63B;
-	height: 52px;
 	line-height: 52px;
-	font-weight: 700;
 	transition: color .3s;
 	margin-left: 60px;
 	display: inline-block;
-	vertical-align: middle;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 .nav_link:hover {
 	color: #4a3faf;
@@ -106,23 +88,8 @@ header h1 {
 	-webkit-text-stroke: 0px;
 	letter-spacing: 1;
 }
-a:hover span {
+.nav_link:hover span {
 	color: #d12a7b;
-}
-#link-1 {
-	position: absolute;
-	right: -400px;
-	top: -250px;
-}
-#link-2 {
-	position: absolute;
-	right: -500px;
-	top: -250px;
-}
-#link-3 {
-	position: absolute;
-	right: -650px;
-	top: -250px;
 }
 
 .content {
@@ -150,28 +117,23 @@ a:hover span {
 	margin-top: 0px;
 }
 
-.description {
-	width: 550px;
-	overflow: hidden;
-}
-
-.description p {
-	max-width: 500px;
-	color: #F7711A;	
-	font-size: 24px;
-	font-weight: 700;
-	-webkit-text-stroke: 0.5px #8fC63B;
-	margin-top: 0px;
-	margin-left: 20px;
-}
 
 .description {
-	position: relative;
+  position: relative;
 	overflow: hidden;
 	width: 555px;
 	height: 242px;
 }
 
+.description p {
+  max-width: 500px;
+  color: #F7711A;	
+  font-size: 24px;
+  font-weight: 700;
+  -webkit-text-stroke: 0.5px #8fC63B;
+  margin-top: 0px;
+  margin-left: 20px;
+}
 .description div {
 	position: absolute;
 }
@@ -186,10 +148,11 @@ a:hover span {
 	transition: all 0.8s ease;
 }
 
-button {
+.btn, .nav {
 	width: 180px;
 	height: 59px;
-	text-transform: uppercase;
+  text-transform: uppercase;
+  text-decoration: none;
 	background-color: #F9911A;
 	color: #fff;
 	text-shadow: 2px 2px 3px #e52783;
@@ -197,7 +160,6 @@ button {
 	font-size: 18px;
 	font-weight: 700;
 	letter-spacing: 1px;
-	text-align: center;
 	border-radius: 5px;
 	display: block;
 	margin: 0 auto;
@@ -206,7 +168,7 @@ button {
 	transition: border-color .3s;
 }
 
-button:hover {
+.btn:hover {
 	border: 4px solid #8b1e99;
 }
 
@@ -266,20 +228,4 @@ button:hover {
 	right: -70px;
 	top: 50%;
 	transform: translateY(-50%);
-}
-
-
-.footer {
-	background-color: #8EC63B;
-}
-
-.address, .call, .email {
-	display: inline-block;
-	vertical-align: middle;
-	padding: 10px 70px 25px;
-	
-}
-h3 {
-	color: #8b1e99;
-	text-shadow: 2px 2px 4px #f9911a;
 }

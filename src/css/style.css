@@ -7,7 +7,8 @@
 
 body {
 	background: #8EC63B;
-  padding: 20px;
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
 
@@ -46,7 +47,7 @@ body {
 	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/back.jpg');
 	background-size: contain;
   width: calc(100% - 160px);
-  max-width: 1000px;
+  width: 1000px;
 	min-height: 570px;
 	border-radius: 20px;
 	border: 3px solid #F9911A;
@@ -56,7 +57,7 @@ body {
   display: inline-block;
   vertical-align: top;
   text-align: left;
-  margin-right: 80px;
+  margin: 20px 80px 0 0;
   position: relative;
 }
 

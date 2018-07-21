@@ -6,20 +6,22 @@ import Home from './components/home';
 import ControlBtns from './components/control-btns';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+function MainDiv() {
+  return(
+    <div id="main-div">
+      <ControlBtns />
+        <Route exact path="/learn" component={LearnApp}/>
+        <Route exact path="/game" component={GameApp}/>
+    </div>
+  )
+}
+
 ReactDOM.render(
   <Router>
-    <div>
-      <div id="main-div">
-        <ControlBtns />
-        <Switch>
-          <Route exact path="/" component={Home}/>
-          <Route exact path="/learn" component={LearnApp}/>
-          <Route exact path="/game" component={GameApp}/>
-          <Route path="*" component={<h1>PAGE NOT FOUND</h1>}/> 
-        </Switch>
-      </div>
-      {/* <Home /> */}
-    </div>
+    <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route path="*" component={MainDiv}/> 
+    </Switch>
   </Router>,
   document.getElementById('root')
 )

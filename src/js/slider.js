@@ -8,10 +8,10 @@ function funcNext() {
     let learn = document.getElementById("learn");
     let play = document.getElementById("play");
 
-    learn.style.transform = 'translateX(555px)';
-    play.style.transform = 'translateX(0px)';
+    learn.style.transform = 'translateX(100%)';
+    play.style.transform = 'translateX(0)';
 
-        if (learn.style.transform = 'translateX(555px)') {
+        if (learn.style.transform = 'translateX(100%)') {
             learn.style.opacity = '0';
             play.style.opacity = '1';
         }
@@ -22,10 +22,10 @@ function funcPrev() {
     let slider1 = document.getElementById('slider1');
     let slider2 = document.getElementById('slider2');
 
-    slider1.style.transform = 'translateX(0px)';
-    slider2.style.transform = 'translateX(-600px)';
+    slider1.style.transform = 'translateX(0)';
+    slider2.style.transform = 'translateX(-100%)';
 
-        if (slider2.style.transform = 'translateX(-600px)') {
+        if (slider2.style.transform = 'translateX(-100%)') {
             slider2.style.width = '300px';
             slider1.style.width = '';
             slider2.style.opacity = '0';
@@ -48,7 +48,7 @@ function funcPrev() {
 
             setTimeout(funcNext, 500);
 
-            if (slider1.style.transform = 'translateX(600px)') {
+            if (slider1.style.transform = 'translateX(100%)') {
                 
                 prevtBtn.style.opacity = '1';
                 prevtBtn.style.border = '4px solid #8EC63B';
@@ -74,12 +74,12 @@ function funcPrev() {
             let learn = document.getElementById("learn");
             let play = document.getElementById("play");
 
-            learn.style.transform = 'translateX(0px)';
-            play.style.transform = 'translateX(-555px)';
+            learn.style.transform = 'translateX(0)';
+            play.style.transform = 'translateX(-100%)';
             
             setTimeout(funcPrev, 500);
 
-            if (play.style.transform = 'translateX(-555px)') {
+            if (play.style.transform = 'translateX(-100%)') {
                 
                 nextBtn.style.opacity = '';
                 nextBtn.style.border = '';
