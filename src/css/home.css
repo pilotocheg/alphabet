@@ -34,7 +34,6 @@ body {
   font-size: 20px;
   line-height: 1;
   color: white;
-  transition: border-color .3s, color .3s;
 }
 
 #btn-container button:hover {
@@ -42,8 +41,8 @@ body {
   color: #d12a7b;
 }
 
-.main-container {
-	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('./img/back.jpg');
+#main-container {
+	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/back.jpg');
 	background-size: contain;
   width: calc(100% - 160px);
   max-width: 1000px;
@@ -52,15 +51,14 @@ body {
 	border: 3px solid #F9911A;
 	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  padding: 15px 50px 15px;
+  padding: 15px 50px;
   display: inline-block;
   vertical-align: top;
   text-align: left;
   margin-right: 80px;
-  position: relative;
 }
 
-.main-letter {
+#main-letter {
 	font-size: 350px;
 	line-height: 1;
 	padding: 20px 0;
@@ -68,8 +66,6 @@ body {
   text-shadow: 5px 3px 0px #8EC63B;
   min-height: 400px;
   min-width: 350px;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 #buttons-container {
@@ -125,7 +121,7 @@ body {
   margin-bottom: 30px;
 }
 
-.word {
+#word {
 	font-size: 60px;
 	font-weight: 700;
 	line-height: 1;
@@ -134,120 +130,6 @@ body {
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
 
-.word span {
+#word span {
 	color: #e52783;
-}
-
-#game-letter-container {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-}
-
-#game-word {
-  position: absolute;
-  left: 50%;
-  bottom: -50px;
-  transform: translateX(-50%);
-}
-
-/* game app styles */
-
-#game-letter {
-  text-shadow: 8px 8px 0px #8EC63B;
-}
-
-#pics-container {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#pics-container img {
-  max-width: 230px;
-  max-height: 240px;
-  margin: 15px;
-  cursor: pointer;
-  transition: transform .2s;
-  border-radius: 10px;
-  border: 2px solid rgba(0, 0, 0, 0.0);
-}
-
-#pics-container img:hover {
-  transform: scale(1.05);
-}
-
-#pics-container img:last-child {
-  display: block;
-  margin: 0 auto;
-}
-#start-div {
-  max-width: 400px;
-  margin: 0 auto;
-  background-color: #ffffffc2;
-  border: 3px solid #F9911A;
-  padding: 5px 30px 15px;
-  border-radius: 10px;
-}
-
-#start-div-header {
-  margin: 0 0 10px;
-  color: #F9911A;
-  text-shadow: 2px 2px 0px #8EC63B;
-  font-size: 50px;
-  text-align: center;
-}
-
-#start-div-text {
-  margin-top: 0;
-  font-size: 18px;
-  font-weight: 700;
-  color: #8EC63B;
-  text-align: justify;
-}
-
-#start-btn {
-  display: block;
-  margin: 0 auto;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  border: 3px solid #F9911A;
-  border-radius: 5px;
-  outline: none;
-  background-color: #ffcc00;
-  color: #fff;
-  cursor: pointer;
-  padding: 10px 15px;
-  transition: border-color .3s, color .3s;
-}
-
-#start-btn:hover {
-  border: 3px solid #d12a7b;
-  color: #d12a7b;
-}
-
-#stars-div {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-}
-
-.game-stars {
-  width: 60px;
-}
-
-#smile-pic {
-  width: 100px;
-  display: block;
-  margin: 0 auto;
-}
-
-#stars-for-message {
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin: 10px auto 0;
-}
-#stars-for-message img {
-  width: 50px;
 }
