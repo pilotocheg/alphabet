@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { soundTrack } from '../../sounds/music-track.mp3';
+import ReactAudioPlayer from 'react-audio-player';
 
 export default class ControlBtns extends React.Component{
   constructor() {
     super();
 
-    this.soundTrack = document.getElementById("soundTrack");
+    // this.soundTrack = document.getElementById("soundTrack");
     this.state = {
       isPlay: true,
     }
@@ -48,7 +49,11 @@ export default class ControlBtns extends React.Component{
             <i className="fas fa-home"></i>
           </button>
         </Link>
-        <audio src={soundTrack} autoPlay loop type="sound/mp3" id="soundTrack"></audio>
+        <ReactAudioPlayer
+          src={soundTrack}
+          autoPlay
+          // controls
+        />
       </div>
     )
   }

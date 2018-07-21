@@ -9,10 +9,7 @@ export default class LearnApp extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      mode: 'learn',
-      isSound: true
-    }
+    this.state = {}
   }
   
   getValues(letter, picName, word) {

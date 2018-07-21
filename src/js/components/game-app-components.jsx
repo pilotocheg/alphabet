@@ -18,7 +18,7 @@ export class StartDiv extends React.Component {
       if (this.state.translateY > 40) {
         clearInterval(this.interval);
       }
-    }, 4)
+    }, 3)
   }
   render() {
     return (

@@ -46,7 +46,7 @@ body {
 .main-container {
 	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/back.jpg');
 	background-size: contain;
-  width: calc(100% - 160px);
+  /* width: calc(100% - 160px); */
   width: 1000px;
 	min-height: 570px;
 	border-radius: 20px;
@@ -59,6 +59,7 @@ body {
   text-align: left;
   margin: 20px 80px 0 0;
   position: relative;
+  overflow: hidden;
 }
 
 .main-letter {
@@ -191,7 +192,7 @@ body {
 }
 
 #start-div-header {
-  margin: 0 0 10px;
+  margin: 0;
   color: #F9911A;
   text-shadow: 2px 2px 0px #8EC63B;
   font-size: 50px;
@@ -247,7 +248,7 @@ body {
   display: block;
   width: 100%;
   text-align: center;
-  margin: 10px auto 0;
+  margin: 0 auto;
 }
 #stars-for-message img {
   width: 50px;
