@@ -16,7 +16,7 @@ export default class ControlBtns extends React.Component{
           id="sound"
         >
 
-            <i className="fas fa-volume-off"></i>
+            {/* <i className="fas fa-volume-off"></i> */}
             <i className="fas fa-volume-up"></i>
           
         </button>
