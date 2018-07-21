@@ -2,7 +2,7 @@ import React from 'react';
 import { MainLetter, Word } from './learn-app-components';
 import { StartDiv, RandomImage, StarImg } from './game-app-components';
 import mainData  from '../main_data';
-import images from '../../images/*';
+import images from '../../images/*.png';
 import starImg from '../../img/star.png';
 
 export default class GameApp extends React.Component {
@@ -80,7 +80,7 @@ export default class GameApp extends React.Component {
                   <RandomImage
                     isTrue={this.state.isTrue} 
                     key={item}
-                    src={images['pic_' + (item + 1) + '.png']} 
+                    src={images['pic_' + (item + 1)]} 
                     letterNum={item}
                     trueNum={this.state.letterNum}
                     isTrueCallback={this.isTrueCallback.bind(this)}

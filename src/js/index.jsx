@@ -20,7 +20,7 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route exact path="/" component={Home}/>
-      <Route path="*" component={MainDiv}/> 
+      <Route path="*" component={MainDiv}/>
     </Switch>
   </Router>,
   document.getElementById('root')

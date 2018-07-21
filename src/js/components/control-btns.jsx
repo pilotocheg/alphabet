@@ -6,19 +6,32 @@ export default class ControlBtns extends React.Component{
   constructor() {
     super();
 
-    this.sound = new Audio(soundTrack);
+    this.soundTrack = document.getElementById("soundTrack");
+    this.state = {
+      isPlay: true,
+    }
   }
+
+  handleSound() {
+    this.setState({
+      isPlay: !this.state.isPlay
+    })
+    // this.soundTrack.pause();
+  }
+
   render() {
     return (
       <div id="btn-container">
         <button 
-          // onClick={ this.props.changeSound }
+          onClick={ this.handleSound.bind(this) }
           id="sound"
         >
-
-            {/* <i className="fas fa-volume-off"></i> */}
+          {
+            this.state.isPlay ?
             <i className="fas fa-volume-up"></i>
-          
+              :
+            <i className="fas fa-volume-off"></i>
+          }
         </button>
         <Link to="/learn">
           <button id="abc">
@@ -32,9 +45,10 @@ export default class ControlBtns extends React.Component{
         </Link>
         <Link to="/">
           <button id="home">
-            <i class="fas fa-home"></i>
+            <i className="fas fa-home"></i>
           </button>
         </Link>
+        <audio src={soundTrack} autoPlay loop type="sound/mp3" id="soundTrack"></audio>
       </div>
     )
   }

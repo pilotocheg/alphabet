@@ -23,11 +23,11 @@ export class StartDiv extends React.Component {
   render() {
     return (
       <div id="start-div" style={{ transform: `translateY(${this.state.translateY}%)` }}>
-        <h2 id="start-div-header">Весела гра</h2>
         {
           !this.props.counter 
             ?
           <div>
+            <h2 id="start-div-header">Весела гра</h2>
             <p id="start-div-text">
               Це ігровий режим. Правила дуже прості: 
               необхідно з трьох картинок обрати ту, яка
@@ -41,6 +41,7 @@ export class StartDiv extends React.Component {
               this.props.counter === 3 
               ?
               <div>
+                <h2 id="start-div-header">Перемога!</h2>
                 <img id="smile-pic" src={smilePic} alt=""/>
                 <div id="stars-for-message">
                   <img src={starPic} alt=""/>
@@ -50,7 +51,10 @@ export class StartDiv extends React.Component {
                 <button id="start-btn" onClick={this.props.handleStart}>Грати ще раз</button>
               </div> 
               :
-              <button id="start-btn" onClick={this.props.handleStart}>Продовжити</button>
+              <div>
+                <img id="smile-pic" src={smilePic} alt=""/>
+                <button id="start-btn" onClick={this.props.handleStart}>Продовжити</button>
+              </div>
             )
         }
       </div>
