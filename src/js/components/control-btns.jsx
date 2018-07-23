@@ -68,7 +68,7 @@ export default class ControlBtns extends React.Component{
         </button>
         <ReactAudioPlayer
           src={soundTrack}
-          volume={0.3}
+          volume={0.2}
           autoPlay
           loop
           ref={elem => this.rap = elem}
