@@ -12,6 +12,11 @@ body {
   text-align: center;
 }
 
+#main-div {
+  width: 1160px;
+  margin: 0 auto;
+}
+
 #root {
   margin: 0 auto;
 }

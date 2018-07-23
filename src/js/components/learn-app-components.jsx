@@ -61,11 +61,14 @@ export class MainLetter extends React.Component{
       })
     }, 1)
   }
-  // componentDidMount() {
-  //   this.letterAnimation();
-  //   this.setState({isMount: true})
-  // }
-  componentWillReceiveProps() {
+  componentDidMount() {
+    if(this.props.mode === 'game') {
+      this.letterAnimation();
+    }
+  }
+  
+  componentWillReceiveProps(props) {
+    if(props.mode !== 'learn' || props.renderPic) return;
     if (this.state.translateX >= 0) this.setState({
       translateX: -100,
       translateY: 0,
@@ -142,6 +145,12 @@ export class Word extends React.Component{
         opacity: this.state.opacity += 0.01
       })
     }, 1)
+  }
+
+  componentDidMount() {
+    if(this.props.mode === 'game') {
+      this.startAnimation();
+    }
   }
 
   componentWillReceiveProps() {

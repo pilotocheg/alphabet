@@ -8,16 +8,33 @@ export default class ControlBtns extends React.Component{
     super();
 
     this.state = {
-      isPlay: true,
+      muted: false,
     }
   }
 
-  handleSound() {
+  handleSoundIcon() {
     this.setState({
-      isPlay: !this.state.isPlay
-    }, () => {
-      !this.state.isPlay ? this.rap.audioEl.pause() : this.rap.audioEl.play();
+      muted: !this.state.muted
     })
+  }
+
+  handleSound() {
+    !this.state.muted ? this.rap.audioEl.pause() : this.rap.audioEl.play();
+    this.handleSoundIcon();
+    this.props.isMutedCallback(!this.state.muted);
+    localStorage.setItem('sound', JSON.stringify(this.state.muted));
+  }
+
+  componentWillMount(){
+    this.setState({
+      muted: JSON.parse(localStorage.getItem('sound'))
+    }, () => {
+      // this.props.isMutedCallback(this.state.muted);
+    })
+  }
+
+  componentDidMount() { 
+    this.handleSound();
   }
 
   render() {
@@ -43,7 +60,7 @@ export default class ControlBtns extends React.Component{
           id="sound"
         >
           {
-            this.state.isPlay ?
+            !this.state.muted ?
             <i className="fas fa-volume-up"></i>
               :
             <i className="fas fa-volume-off"></i>
@@ -51,7 +68,7 @@ export default class ControlBtns extends React.Component{
         </button>
         <ReactAudioPlayer
           src={soundTrack}
-          volume={0.5}
+          volume={0.3}
           autoPlay
           loop
           ref={elem => this.rap = elem}

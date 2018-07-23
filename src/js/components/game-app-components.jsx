@@ -66,7 +66,21 @@ export class RandomImage extends React.Component {
   constructor() {
     super();
     
-    this.state = {}
+    this.state = {
+      opacity: 0,
+    }
+  }
+
+  startAnimation() {
+    this.interval = setInterval(() => {
+      if (this.state.opacity >= 1) {
+        clearInterval(this.interval);
+        return;
+      }
+      this.setState({
+        opacity: this.state.opacity += 0.02,
+      })
+    }, 1)
   }
   
   handleClick(e) {
@@ -81,10 +95,15 @@ export class RandomImage extends React.Component {
       })
     }
   }
+
+  componentDidMount(){
+    this.startAnimation();
+  }
   
   render () {
     return (
       <img 
+        style={{ opacity: this.state.opacity }}
         src={this.props.src}
         onClick={this.handleClick.bind(this)}
         onMouseLeave={e => {
