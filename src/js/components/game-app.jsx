@@ -2,7 +2,7 @@ import React from 'react';
 import { MainLetter, Word } from './learn-app-components';
 import { StartDiv, RandomImage, StarImg } from './game-app-components';
 import mainData  from '../main_data';
-import images from '../../images/*.png';
+import images from '../../images/**.png';
 import starImg from '../../img/star.png';
 
 export default class GameApp extends React.Component {
