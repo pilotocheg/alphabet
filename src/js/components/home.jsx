@@ -22,22 +22,30 @@ export default function Home() {
             <Link to="/game">
               <p className="nav_link" id="link-2" href=""><span>Г</span>РАТИ</p>
             </Link>
-            <p className="nav_link" id="link-3" href=""><span>П</span>РО <span>Н</span>АС</p>
+            <Link to="/about">
+              <p className="nav_link" id="link-3" href=""><span>П</span>РО <span>Н</span>АС</p>
+            </Link>
           </div>
-          <p className="title_primary">Інтерактивна абетка для дітей</p>
+          <p className="title_primary">
+            <span>І</span>нтерактивна <span>а</span>бетка <span>д</span>ля <span>д</span>ітей
+          </p>
         </header>
         <div className="content">
           <div className="description">
             <div id="learn" className="learn">
               <h2><span>В</span>ЧИТИСЯ</h2>
-              <p>Ця програма допоможе дітям вивчати абетку, завдяки яскравим картинкам та звукам. Також має цікавий <span>ігровий</span> режим</p>
+              <p>Ця програма допоможе дітям вивчати абетку, 
+              завдяки яскравим картинкам та звукам.
+              Також має цікавий ігровий режим.</p>
               <Link to="/learn">
                 <button className="btn">Вчитися</button>
               </Link>
             </div>
             <div id="play" className="play">
               <h2><span>Г</span>РАТИ</h2>
-              <p>Цей режим поєднує в собі навчання та гру. Він допоможе дітям краще засвоїти літери,та зрозуміти їх зв'язок із словами</p>
+              <p>Цей режим поєднує в собі навчання та гру. 
+              Він допоможе дітям краще засвоїти літери,та зрозуміти 
+              їх зв'язок із словами.</p>
               <Link to="/game">
                 <button className="btn">Грати</button>
               </Link>

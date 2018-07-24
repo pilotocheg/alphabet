@@ -39,10 +39,24 @@ export default class LearnApp extends React.Component {
   render() {
     return(
       <div className="main-container">
-        <MainLetter id="learn-letter" mode="learn" bigLetter={ this.state.letter } renderPic={this.state.renderPic}/>
+        <MainLetter 
+          id="learn-letter" 
+          mode="learn" 
+          bigLetter={ this.state.letter } 
+          renderPic={this.state.renderPic}
+          handleSound={this.props.mute}
+        />
         <div id="picture">
-          <Pic src={ this.state.renderPic ? this.state.picName : "" }/>
-          <Word id="learn-word" mode="learn" word={ this.state.renderPic ? this.state.word : "" }/>
+          <Pic 
+            src={ this.state.renderPic ? this.state.picName : "" }
+            handleSound={this.props.mute}
+          />
+          <Word 
+            id="learn-word" 
+            mode="learn" 
+            word={ this.state.renderPic ? this.state.word : "" }
+            handleSound={this.props.mute}
+          />
         </div>
         <div id="buttons-container">
           { mainData.map((el) => {

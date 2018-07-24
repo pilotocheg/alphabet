@@ -194,7 +194,7 @@ export default
     },
     {
       letter: "Я", 
-      word: "ЯБЛОКО",
+      word: "ЯБЛУКО",
       pic: "pic_33",
       sound: "sound_33", 
     },

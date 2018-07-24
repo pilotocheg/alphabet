@@ -1,5 +1,5 @@
 .container {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../img/back.jpg');
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('../img/back.jpg');
 	background-repeat: repeat;
 	background-size: content;
   width: 100%;
@@ -11,7 +11,8 @@
 	max-width: 1170px;
 	min-width: 800px;
 	position: relative;
-	margin: 0 auto;
+  margin: 0 auto;
+  text-align: left;
 }
 
 header {
@@ -19,10 +20,10 @@ header {
 }
 
 header h1 {
-	font-size: 70px;
+	font-size: 60px;
 	font-weight: bold;
 	color: #F9911A;
-	text-shadow: 5px 3px 0px #8EC63B; 
+	text-shadow: 3px 3px 0px #8EC63B; 
 	display: inline-block;
 	position: relative;
 	letter-spacing: 0;
@@ -32,36 +33,39 @@ header h1 {
 .stroke {
 	position: relative;
 	z-index: 5;
-	font-size: 71px;
+	font-size: 61px;
 	-webkit-text-stroke: 1px white;
 }
 
 #big-letter {
 	z-index: 0;
 	line-height: 1;
-	font-size: 240px;
+	font-size: 210px;
 	position: absolute;
 	color: #f7711a;
-	top: -60px;
-	right: -85px;
+	top: -53px;
+  right: -80px;
+	text-shadow: 6px 5px 0px #8EC63B;   
 }
 
 #second-word {
 	position: relative;
-	right: -260px;
+	right: -240px;
 
 }
 
 .title_primary {
-	line-height: 1;
-	margin: 0 auto;
-	/*padding-top: 0;*/
-	font-size: 36px;
-	color:  #f7711a;
+	line-height: 0.8;
+	margin: 0;
+	font-size: 32px;
+	color:  #4a3faf;
 	text-align: left;
-	margin-left: 20px;
-	-webkit-text-stroke: 0.5px #8fC63B;
-	font-weight: 700;
+  font-weight: 800;
+  /* font-style: italic; */
+}
+
+.title_primary span {
+  color: #e52783;
 }
 
 .navigation {
@@ -104,17 +108,16 @@ header h1 {
 	font-size: 46px;
 	line-height: 1;
 	color: #4a3faf;
-	text-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 	margin-top: 0;
 }
-.content span {
-	color: #e52783;
+
+.content h2 span {
+  color: #e52783;
 }
 
 .description, .images {
-	vertical-align: middle;
+  vertical-align: middle;
 	display: inline-block;
-	margin-top: 0px;
 }
 
 
@@ -123,6 +126,11 @@ header h1 {
 	overflow: hidden;
 	width: 555px;
 	height: 242px;
+  margin: 30px auto;
+}
+
+.description div {
+  position: absolute;
 }
 
 .description p {
@@ -134,25 +142,25 @@ header h1 {
   margin-top: 0px;
   margin-left: 20px;
 }
-.description div {
-	position: absolute;
+
+.description a {
+  text-decoration:none; 
 }
 
 #play {
 	transform: translateX(-555px);
-	transition: all 0.8s ease;
+	transition: transform 0.8s ease;
 }
 
 #learn {
 	transform: translateX(0px);
-	transition: all 0.8s ease;
+	transition: transform 0.8s ease;
 }
 
 .btn, .nav {
 	width: 180px;
 	height: 59px;
   text-transform: uppercase;
-  text-decoration: none;
 	background-color: #F9911A;
 	color: #fff;
 	text-shadow: 2px 2px 3px #e52783;
@@ -195,17 +203,18 @@ header h1 {
   left: 0;
 	border-radius: 10px;
 	border: 4px solid #F9911A;
-	width: 600px;
+  width: 100%;
+  /* height: 100%; */
 }
 
 .nav {
 	width: 60px;
 	height: 60px;
 	font-size: 45px;
-	line-height: 0.8;
+	line-height: 1;
 	font-family: 'Roboto';
 	padding: 0;
-	padding-bottom: 7px;
+	padding-bottom: 13px;
 	border-radius: 40%;
 	position: absolute;
 	transition: color 0.2s, border-color 0.2s;
@@ -228,4 +237,68 @@ header h1 {
 	right: -70px;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+/* about us styles */
+
+#about-title {
+  text-align: left;
+  font-size: 30px;
+  color: #F9911A;
+  text-shadow: 2px 2px 0px #8fC63B;
+  margin: 20px 0 0;
+  font-weight: 800;
+}
+
+.text {
+	color: #424242;	
+	font-size: 18px;
+	font-weight: 700;
+  text-align: left;
+  margin: 0;
+  max-width: 500px;
+}
+
+#about-description,
+#members-container {
+  display: inline-block;
+  vertical-align: top;
+}
+
+#members-container {
+  text-align: left;
+  max-width: 500px;
+  position: relative;
+  z-index: 5;
+  /* width: 100%; */
+}
+
+.team-member {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 60px;
+}
+
+.team-member img {
+  width: 160px;
+}
+
+.team-member h3 {
+  margin-top: 0;
+  color: #424242;
+}
+
+#girrafe-pic {
+  position: absolute;
+  bottom: 100px;
+  right: -80px;
+  opacity: 0.9;
+}
+
+#toy-pic {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  height: 200px;
+  opacity: 0.9;
 }

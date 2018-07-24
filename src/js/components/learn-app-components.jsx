@@ -68,7 +68,7 @@ export class MainLetter extends React.Component{
   }
   
   componentWillReceiveProps(props) {
-    if(props.mode !== 'learn' || props.renderPic) return;
+    if(props.mode !== 'learn' || props.renderPic || this.props.handleSound !== props.handleSound) return;
     if (this.state.translateX >= 0) this.setState({
       translateX: -100,
       translateY: 0,
@@ -111,7 +111,8 @@ export class Pic extends React.Component{
     }, 1)
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(props) {
+    if (this.props.handleSound !== props.handleSound) return;
     if(this.state.opacity >= 1) this.setState({ opacity: 0 });
     this.startAnimation();
   }
@@ -153,7 +154,8 @@ export class Word extends React.Component{
     }
   }
 
-  componentWillReceiveProps() {
+  componentWillReceiveProps(props) {
+    if(this.props.mode !== 'learn' || this.props.handleSound !== props.handleSound) return;
     if(this.state.opacity >= 1) this.setState({ opacity: 0 });
     this.startAnimation();
   }
