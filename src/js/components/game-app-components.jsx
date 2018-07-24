@@ -89,7 +89,9 @@ export class RandomImage extends React.Component {
       this.setState({
         isTrue: this.props.letterNum === this.props.trueNum,
       },() => {
-        if (this.state.isTrue) this.props.isTrueCallback(this.state.isTrue);
+        // if (this.state.isTrue) {
+          this.props.isTrueCallback(this.state.isTrue)
+        // }
         picStyle.background = this.state.isTrue ? '#8ec63b' : 'red';
         picStyle.border = !this.state.isTrue || "2px solid #F9911A";
       })

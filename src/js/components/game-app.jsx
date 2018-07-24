@@ -7,6 +7,7 @@ import starImg from '../../img/star.png';
 import sounds from '../../sounds/words/**.wav';
 import awesomeSounds from '../../sounds/awesome/**.wav';
 import ovationSound from '../../sounds/ovation.wav';
+import alertSound from '../../sounds/not_right.wav';
 import ReactAudioPlayer from 'react-audio-player';
 
 export default class GameApp extends React.Component {
@@ -32,8 +33,17 @@ export default class GameApp extends React.Component {
   }
 
   isTrueCallback(value) {
-    this.setState({ isTrue: value, counter: this.state.counter += 1, });
-    this.awesomeSound.audioEl.play();
+    this.setState({ isTrue: value }, () => {
+      if (this.state.isTrue) {
+        this.setState({
+          counter: this.state.counter += 1,
+        }, () => {
+          this.awesomeSound.audioEl.play();
+        })
+      } else {
+        this.alertSound.audioEl.play();
+      }
+    });
   }
   
   handleNextGame() {
@@ -78,10 +88,6 @@ export default class GameApp extends React.Component {
 
   playWordSound() {
     this.wordSound.audioEl.play();
-  }
-
-  playOvationSound() {
-    this.ovationSound.audioEl.play();
   }
 
   render() {
@@ -151,6 +157,11 @@ export default class GameApp extends React.Component {
         <ReactAudioPlayer
           src={ovationSound}
           ref={elem => this.ovationSound = elem}
+          muted={this.props.mute}
+        />
+        <ReactAudioPlayer 
+          src={alertSound}
+          ref={elem => this.alertSound = elem}
           muted={this.props.mute}
         />
       </div>
