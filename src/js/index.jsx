@@ -6,14 +6,34 @@ import Home from './components/home';
 import ControlBtns from './components/control-btns';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-function MainDiv() {
-  return(
-    <div id="main-div">
-      <ControlBtns />
-        <Route exact path="/learn" component={LearnApp}/>
-        <Route exact path="/game" component={GameApp}/>
-    </div>
-  )
+class MainDiv extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      mute: false
+    };
+  }
+  
+  isMutedCallback(mute) {
+    this.setState({
+      mute: mute
+    })
+  }
+
+  render() {
+    return(
+      <div id="main-div">
+        <ControlBtns isMutedCallback={this.isMutedCallback.bind(this)}/>
+          <Route exact path="/learn" render={() => (
+            <LearnApp mute={this.state.mute}/>
+          )}/>
+          <Route exact path="/game" render={() => (
+            <GameApp mute={this.state.mute}/>
+          )}/>
+      </div>
+    )
+  }
 }
 
 ReactDOM.render(

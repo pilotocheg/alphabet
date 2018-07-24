@@ -18,7 +18,7 @@ export class StartDiv extends React.Component {
       if (this.state.translateY > 40) {
         clearInterval(this.interval);
       }
-    }, 4)
+    }, 3)
   }
   render() {
     return (
@@ -66,7 +66,21 @@ export class RandomImage extends React.Component {
   constructor() {
     super();
     
-    this.state = {}
+    this.state = {
+      opacity: 0,
+    }
+  }
+
+  startAnimation() {
+    this.interval = setInterval(() => {
+      if (this.state.opacity >= 1) {
+        clearInterval(this.interval);
+        return;
+      }
+      this.setState({
+        opacity: this.state.opacity += 0.02,
+      })
+    }, 1)
   }
   
   handleClick(e) {
@@ -75,16 +89,23 @@ export class RandomImage extends React.Component {
       this.setState({
         isTrue: this.props.letterNum === this.props.trueNum,
       },() => {
-        if (this.state.isTrue) this.props.isTrueCallback(this.state.isTrue);
+        // if (this.state.isTrue) {
+          this.props.isTrueCallback(this.state.isTrue)
+        // }
         picStyle.background = this.state.isTrue ? '#8ec63b' : 'red';
         picStyle.border = !this.state.isTrue || "2px solid #F9911A";
       })
     }
   }
+
+  componentDidMount(){
+    this.startAnimation();
+  }
   
   render () {
     return (
       <img 
+        style={{ opacity: this.state.opacity }}
         src={this.props.src}
         onClick={this.handleClick.bind(this)}
         onMouseLeave={e => {

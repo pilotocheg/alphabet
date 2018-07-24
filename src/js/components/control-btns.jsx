@@ -1,38 +1,50 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { soundTrack } from '../../sounds/music-track.mp3';
+import soundTrack from '../../sounds/music-track.mp3';
+import ReactAudioPlayer from 'react-audio-player';
 
 export default class ControlBtns extends React.Component{
   constructor() {
     super();
 
-    this.soundTrack = document.getElementById("soundTrack");
     this.state = {
-      isPlay: true,
+      muted: false,
     }
   }
 
-  handleSound() {
+  handleSoundIcon() {
     this.setState({
-      isPlay: !this.state.isPlay
+      muted: !this.state.muted
     })
-    // this.soundTrack.pause();
+  }
+
+  handleSound() {
+    !this.state.muted ? this.rap.audioEl.pause() : this.rap.audioEl.play();
+    this.handleSoundIcon();
+    this.props.isMutedCallback(!this.state.muted);
+    localStorage.setItem('sound', JSON.stringify(this.state.muted));
+  }
+
+  componentWillMount(){
+    this.setState({
+      muted: JSON.parse(localStorage.getItem('sound'))
+    }, () => {
+      // this.props.isMutedCallback(this.state.muted);
+    })
+  }
+
+  componentDidMount() { 
+    this.handleSound();
   }
 
   render() {
     return (
       <div id="btn-container">
-        <button 
-          onClick={ this.handleSound.bind(this) }
-          id="sound"
-        >
-          {
-            this.state.isPlay ?
-            <i className="fas fa-volume-up"></i>
-              :
-            <i className="fas fa-volume-off"></i>
-          }
-        </button>
+        <Link to="/">
+          <button id="home">
+            <i className="fas fa-home"></i>
+          </button>
+        </Link>
         <Link to="/learn">
           <button id="abc">
             <i className="fas fa-book-open"></i>
@@ -43,12 +55,24 @@ export default class ControlBtns extends React.Component{
             <i className="fas fa-gamepad"></i>
           </button>
         </Link>
-        <Link to="/">
-          <button id="home">
-            <i className="fas fa-home"></i>
-          </button>
-        </Link>
-        <audio src={soundTrack} autoPlay loop type="sound/mp3" id="soundTrack"></audio>
+        <button 
+          onClick={ this.handleSound.bind(this) }
+          id="sound"
+        >
+          {
+            !this.state.muted ?
+            <i className="fas fa-volume-up"></i>
+              :
+            <i className="fas fa-volume-off"></i>
+          }
+        </button>
+        <ReactAudioPlayer
+          src={soundTrack}
+          volume={0.2}
+          autoPlay
+          loop
+          ref={elem => this.rap = elem}
+        />
       </div>
     )
   }
