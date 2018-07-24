@@ -25,36 +25,32 @@ export class StartDiv extends React.Component {
       <div id="start-div" style={{ transform: `translateY(${this.state.translateY}%)` }}>
         {
           !this.props.counter 
-            ?
-          <div>
-            <h2 id="start-div-header">Весела гра</h2>
-            <p id="start-div-text">
-              Це ігровий режим. Правила дуже прості: 
-              необхідно з трьох картинок обрати ту, яка
-              відповідає букві зліва. Щоб виграти, необхідно
-              знайти правильну картинку три рази.
-            </p>
-            <button id="start-btn" onClick={this.props.handleStart}>давай почнемо</button>
-          </div> 
-            :
-            (
+          ? <div>
+              <h2 id="start-div-header">Весела гра</h2>
+              <p id="start-div-text">
+                Це ігровий режим. Правила дуже прості: 
+                необхідно з трьох картинок обрати ту, яка
+                відповідає букві зліва. Щоб виграти, необхідно
+                знайти правильну картинку три рази.
+              </p>
+              <button id="start-btn" onClick={this.props.handleStart}>давай почнемо</button>
+            </div> 
+          : (
               this.props.counter === 3 
-              ?
-              <div>
-                <h2 id="start-div-header">Перемога!</h2>
-                <img id="smile-pic" src={smilePic} alt=""/>
-                <div id="stars-for-message">
-                  <img src={starPic} alt=""/>
-                  <img src={starPic} alt=""/>
-                  <img src={starPic} alt=""/>
+              ? <div>
+                  <h2 id="start-div-header">Перемога!</h2>
+                  <img id="smile-pic" src={smilePic} alt=""/>
+                  <div id="stars-for-message">
+                    <img src={starPic} alt=""/>
+                    <img src={starPic} alt=""/>
+                    <img src={starPic} alt=""/>
+                  </div>
+                  <button id="start-btn" onClick={this.props.handleStart}>Грати ще раз</button>
+                </div> 
+              : <div>
+                  <img id="smile-pic" src={smilePic} alt=""/>
+                  <button id="start-btn" onClick={this.props.handleStart}>Продовжити</button>
                 </div>
-                <button id="start-btn" onClick={this.props.handleStart}>Грати ще раз</button>
-              </div> 
-              :
-              <div>
-                <img id="smile-pic" src={smilePic} alt=""/>
-                <button id="start-btn" onClick={this.props.handleStart}>Продовжити</button>
-              </div>
             )
         }
       </div>
@@ -78,9 +74,9 @@ export class RandomImage extends React.Component {
         return;
       }
       this.setState({
-        opacity: this.state.opacity += 0.02,
+        opacity: this.state.opacity += 0.01,
       })
-    }, 1)
+    }, 3)
   }
   
   handleClick(e) {
@@ -89,9 +85,7 @@ export class RandomImage extends React.Component {
       this.setState({
         isTrue: this.props.letterNum === this.props.trueNum,
       },() => {
-        // if (this.state.isTrue) {
-          this.props.isTrueCallback(this.state.isTrue)
-        // }
+        this.props.isTrueCallback(this.state.isTrue);
         picStyle.background = this.state.isTrue ? '#8ec63b' : 'red';
         picStyle.border = !this.state.isTrue || "2px solid #F9911A";
       })

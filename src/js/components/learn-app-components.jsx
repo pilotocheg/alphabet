@@ -59,7 +59,7 @@ export class MainLetter extends React.Component{
         translateY: this.state.translateY += this.state.varForTranslateY,
         opacity: this.state.opacity += 0.01
       })
-    }, 1)
+    }, 5)
   }
   componentDidMount() {
     if(this.props.mode === 'game') {
@@ -108,7 +108,7 @@ export class Pic extends React.Component{
       this.setState({
         opacity: this.state.opacity += 0.01
       })
-    }, 1)
+    }, 3)
   }
 
   componentWillReceiveProps(props) {
@@ -145,7 +145,7 @@ export class Word extends React.Component{
       this.setState({
         opacity: this.state.opacity += 0.01
       })
-    }, 1)
+    }, 3)
   }
 
   componentDidMount() {
