@@ -17,13 +17,13 @@ export default function AboutUs () {
 						</span>
 					</h1>
           <div className="navigation">
-            <Link to="/learn">
+            <Link to="/alphabet/learn">
               <p className="nav_link" id="link-1" href=""><span>В</span>ЧИТИСЯ</p>
             </Link>
-            <Link to="/game">
+            <Link to="/alphabet/game">
               <p className="nav_link" id="link-2" href=""><span>Г</span>РАТИ</p>
             </Link>
-            <Link to="/">
+            <Link to="/alphabet">
               <p className="nav_link" id="link-3" href=""><span>Н</span>А <span>Г</span>ОЛОВНУ</p>
             </Link>
 				  </div>

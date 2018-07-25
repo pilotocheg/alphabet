@@ -38,7 +38,11 @@ export default class GameApp extends React.Component {
         this.setState({
           counter: this.state.counter += 1,
         }, () => {
-          this.awesomeSound.audioEl.play();
+          try {
+            this.awesomeSound.audioEl.play();
+          } catch (err) {
+            console.log(err);
+          }        
         })
       } else {
         this.alertSound.audioEl.play();

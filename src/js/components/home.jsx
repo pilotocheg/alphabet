@@ -16,13 +16,13 @@ export default function Home() {
             </span>
           </h1>
           <div className="navigation">
-            <Link to="/learn">
+            <Link to="/alphabet/learn">
               <p className="nav_link" id="link-1" href=""><span>В</span>ЧИТИСЯ</p>
             </Link>
-            <Link to="/game">
+            <Link to="/alphabet/game">
               <p className="nav_link" id="link-2" href=""><span>Г</span>РАТИ</p>
             </Link>
-            <Link to="/about">
+            <Link to="/alphabet/about">
               <p className="nav_link" id="link-3" href=""><span>П</span>РО <span>Н</span>АС</p>
             </Link>
           </div>
@@ -37,7 +37,7 @@ export default function Home() {
               <p>Ця програма допоможе дітям вивчати абетку, 
               завдяки яскравим картинкам та звукам.
               Також має цікавий ігровий режим.</p>
-              <Link to="/learn">
+              <Link to="/alphabet/learn">
                 <button className="btn">Вчитися</button>
               </Link>
             </div>
@@ -46,7 +46,7 @@ export default function Home() {
               <p>Цей режим поєднує в собі навчання та гру. 
               Він допоможе дітям краще засвоїти літери,та зрозуміти 
               їх зв'язок із словами.</p>
-              <Link to="/game">
+              <Link to="/alphabet/game">
                 <button className="btn">Грати</button>
               </Link>
             </div>

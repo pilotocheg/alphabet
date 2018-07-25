@@ -85,9 +85,13 @@ export class RandomImage extends React.Component {
       this.setState({
         isTrue: this.props.letterNum === this.props.trueNum,
       },() => {
-        this.props.isTrueCallback(this.state.isTrue);
-        picStyle.background = this.state.isTrue ? '#8ec63b' : 'red';
-        picStyle.border = !this.state.isTrue || "2px solid #F9911A";
+        try {
+          this.props.isTrueCallback(this.state.isTrue);
+          picStyle.background = this.state.isTrue ? '#8ec63b' : 'red';
+          picStyle.border = !this.state.isTrue || "2px solid #F9911A";
+        } catch (err) {
+          console.log(err);
+        }
       })
     }
   }
@@ -140,7 +144,11 @@ export class StarImg extends React.Component {
       this.setState({ 
         opacity: 1,
       }, () => {
-        if (!this.state.animDone) this.transformAnimation();
+        try {
+          if (!this.state.animDone) this.transformAnimation();
+        } catch (err) {
+          console.log(err);
+        }
       })
     }
     if (!nextProps.counter) this.setState({opacity: 0})

@@ -26,8 +26,11 @@ export default class ControlBtns extends React.Component{
   }
   
   handleMusic() {
-
-    this.state.music ? this.rap.audioEl.play() : this.rap.audioEl.pause()
+    this.setState({
+      music: !this.state.music
+    }, () => {
+      this.state.music ? this.rap.audioEl.play() : this.rap.audioEl.pause()
+    })
   }
 
   componentWillMount(){
@@ -45,17 +48,17 @@ export default class ControlBtns extends React.Component{
   render() {
     return (
       <div id="btn-container">
-        <Link to="/">
+        <Link to="/alphabet">
           <button id="home">
             <i className="fas fa-home"></i>
           </button>
         </Link>
-        <Link to="/learn">
+        <Link to="/alphabet/learn">
           <button id="abc">
             <i className="fas fa-book-open"></i>
           </button>
         </Link>
-        <Link to="/game">
+        <Link to="/alphabet/game">
           <button id="game">
             <i className="fas fa-gamepad"></i>
           </button>
@@ -70,7 +73,7 @@ export default class ControlBtns extends React.Component{
             : <i className="fas fa-volume-off"></i>
           }
         </button>
-        <button>
+        <button onClick={this.handleMusic.bind(this)}>
           <i class="fas fa-music"></i>
         </button>
         <ReactAudioPlayer

@@ -69,12 +69,14 @@ export class MainLetter extends React.Component{
   
   componentWillReceiveProps(props) {
     if(props.mode !== 'learn' || props.renderPic || this.props.handleSound !== props.handleSound) return;
-    if (this.state.translateX >= 0) this.setState({
-      translateX: -100,
-      translateY: 0,
-      opacity: 0,
-      varForTranslateY: -0.2
-    })
+    if (this.state.translateX >= 0) {
+      this.setState({
+        translateX: -100,
+        translateY: 0,
+        opacity: 0,
+        varForTranslateY: -0.2
+      })
+    }
     this.letterAnimation();
   }
   render() {

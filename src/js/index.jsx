@@ -26,10 +26,10 @@ class MainDiv extends React.Component {
     return(
       <div id="main-div">
         <ControlBtns isMutedCallback={this.isMutedCallback.bind(this)}/>
-        <Route exact path="/learn" render={() => (
+        <Route exact path="/alphabet/learn" render={() => (
           <LearnApp mute={this.state.mute}/>
         )}/>
-        <Route exact path="/game" render={() => (
+        <Route exact path="/alphabet/game" render={() => (
           <GameApp mute={this.state.mute}/>
         )}/>
       </div>
@@ -40,9 +40,9 @@ class MainDiv extends React.Component {
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route exact path="/" component={Home}/>
-      <Route exact path="/about" component={AboutUs}/>
-      <Route path="*" component={MainDiv}/>
+      <Route exact path="/alphabet" component={Home}/>
+      <Route exact path="/alphabet/about" component={AboutUs}/>
+      <Route path="/alphabet/*" component={MainDiv}/>
     </Switch>
   </Router>,
   document.getElementById('root')
