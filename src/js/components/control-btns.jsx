@@ -13,36 +13,21 @@ export default class ControlBtns extends React.Component{
     }
   }
 
-  handleSoundIcon() {
+  handleSound() {
     this.setState({
       muted: !this.state.muted
+    }, () => {
+      this.props.isMutedCallback(this.state.muted);
     })
-  }
-
-  handleSound() {
-    this.handleSoundIcon();
-    this.props.isMutedCallback(!this.state.muted);
-    localStorage.setItem('sound', JSON.stringify(this.state.muted));
   }
   
   handleMusic() {
+    if (this.state.muted) return;
     this.setState({
       music: !this.state.music
     }, () => {
-      this.state.music ? this.rap.audioEl.play() : this.rap.audioEl.pause()
+      this.state.music ? this.rap.audioEl.play() : this.rap.audioEl.pause();
     })
-  }
-
-  componentWillMount(){
-    this.setState({
-      muted: JSON.parse(localStorage.getItem('sound'))
-    }, () => {
-      // this.props.isMutedCallback(this.state.muted);
-    })
-  }
-
-  componentDidMount() { 
-    this.handleSound();
   }
 
   render() {
@@ -64,6 +49,7 @@ export default class ControlBtns extends React.Component{
           </button>
         </Link>
         <button 
+          style={{ color: this.state.muted ? "#d12a7b" : "#fff" }}
           onClick={ this.handleSound.bind(this) }
           id="sound"
         >
@@ -73,7 +59,10 @@ export default class ControlBtns extends React.Component{
             : <i className="fas fa-volume-off"></i>
           }
         </button>
-        <button onClick={this.handleMusic.bind(this)}>
+        <button 
+          onClick={this.handleMusic.bind(this)}
+          style={{ color: this.state.music ? "#fff" : "#d12a7b" }}
+        >
           <i class="fas fa-music"></i>
         </button>
         <ReactAudioPlayer
@@ -82,6 +71,7 @@ export default class ControlBtns extends React.Component{
           autoPlay
           loop
           ref={elem => this.rap = elem}
+          muted={this.state.muted}
         />
       </div>
     )
