@@ -110,10 +110,10 @@ module.exports="/alphabet/sound_1.bb195cee.wav";
 module.exports="/alphabet/sound_10.f3ecf6be.wav";
 },{}],"c8c2":[function(require,module,exports) {
 module.exports="/alphabet/sound_10_w.4266e668.wav";
-},{}],"E74y":[function(require,module,exports) {
-module.exports="/alphabet/sound_11_w.ba0b1dd3.wav";
 },{}],"vYAS":[function(require,module,exports) {
 module.exports="/alphabet/sound_11.fb8d2b3a.wav";
+},{}],"E74y":[function(require,module,exports) {
+module.exports="/alphabet/sound_11_w.ba0b1dd3.wav";
 },{}],"5j/i":[function(require,module,exports) {
 module.exports="/alphabet/sound_12.b6054922.wav";
 },{}],"m8Kg":[function(require,module,exports) {
@@ -136,30 +136,28 @@ module.exports="/alphabet/sound_16.244d12f1.wav";
 module.exports="/alphabet/sound_16_w.dc334f6f.wav";
 },{}],"IuWL":[function(require,module,exports) {
 module.exports="/alphabet/sound_17.bb0620f3.wav";
-},{}],"I8iS":[function(require,module,exports) {
-module.exports="/alphabet/sound_17_w.83e93949.wav";
 },{}],"mmWn":[function(require,module,exports) {
 module.exports="/alphabet/sound_18.d5a40574.wav";
+},{}],"I8iS":[function(require,module,exports) {
+module.exports="/alphabet/sound_17_w.83e93949.wav";
 },{}],"P70j":[function(require,module,exports) {
 module.exports="/alphabet/sound_18_w.0c878e0a.wav";
 },{}],"zfEM":[function(require,module,exports) {
 module.exports="/alphabet/sound_19.86ce9d3f.wav";
-},{}],"w6rB":[function(require,module,exports) {
-module.exports="/alphabet/sound_19_w.280ac04e.wav";
 },{}],"1j5Y":[function(require,module,exports) {
 module.exports="/alphabet/sound_1_w.de00cd9e.wav";
-},{}],"+VWu":[function(require,module,exports) {
-module.exports="/alphabet/sound_2.7760e773.wav";
+},{}],"w6rB":[function(require,module,exports) {
+module.exports="/alphabet/sound_19_w.280ac04e.wav";
 },{}],"CV9K":[function(require,module,exports) {
 module.exports="/alphabet/sound_20.47c20e16.wav";
+},{}],"+VWu":[function(require,module,exports) {
+module.exports="/alphabet/sound_2.7760e773.wav";
 },{}],"pxNJ":[function(require,module,exports) {
 module.exports="/alphabet/sound_20_w.c6938868.wav";
 },{}],"g4NR":[function(require,module,exports) {
 module.exports="/alphabet/sound_21.ec2246a1.wav";
 },{}],"+7H6":[function(require,module,exports) {
 module.exports="/alphabet/sound_21_w.551c6325.wav";
-},{}],"OKgB":[function(require,module,exports) {
-module.exports="/alphabet/sound_22.60349a31.wav";
 },{}],"1V/1":[function(require,module,exports) {
 module.exports="/alphabet/sound_22_w.5499a4c7.wav";
 },{}],"w/KB":[function(require,module,exports) {
@@ -184,10 +182,10 @@ module.exports="/alphabet/sound_27.a3e071eb.wav";
 module.exports="/alphabet/sound_27_w.f6505dbe.wav";
 },{}],"TF7f":[function(require,module,exports) {
 module.exports="/alphabet/sound_28.cddf959e.wav";
-},{}],"9JSb":[function(require,module,exports) {
-module.exports="/alphabet/sound_28_w.056e3d2d.wav";
 },{}],"pm2J":[function(require,module,exports) {
 module.exports="/alphabet/sound_29.b8cc1b2a.wav";
+},{}],"9JSb":[function(require,module,exports) {
+module.exports="/alphabet/sound_28_w.056e3d2d.wav";
 },{}],"Oker":[function(require,module,exports) {
 module.exports="/alphabet/sound_29_w.d0950142.wav";
 },{}],"yXBQ":[function(require,module,exports) {
@@ -224,21 +222,23 @@ module.exports="/alphabet/sound_5_w.e1716c72.wav";
 module.exports="/alphabet/sound_6.e52a05a8.wav";
 },{}],"Ois7":[function(require,module,exports) {
 module.exports="/alphabet/sound_6_w.2b7c088b.wav";
-},{}],"0KaR":[function(require,module,exports) {
-module.exports="/alphabet/sound_7.e4a85ea0.wav";
 },{}],"cdSX":[function(require,module,exports) {
 module.exports="/alphabet/sound_7_w.112b5e95.wav";
 },{}],"DJyR":[function(require,module,exports) {
 module.exports="/alphabet/sound_8.2e4e908b.wav";
+},{}],"0KaR":[function(require,module,exports) {
+module.exports="/alphabet/sound_7.e4a85ea0.wav";
 },{}],"QalO":[function(require,module,exports) {
 module.exports="/alphabet/sound_8_w.a181d909.wav";
 },{}],"0utZ":[function(require,module,exports) {
 module.exports="/alphabet/sound_9.30688a03.wav";
 },{}],"v6XE":[function(require,module,exports) {
 module.exports="/alphabet/sound_9_w.c5ca21a2.wav";
+},{}],"OKgB":[function(require,module,exports) {
+module.exports="/alphabet/sound_22.60349a31.wav";
 },{}],"ZuFV":[function(require,module,exports) {
-module.exports={sound_1:require("./sound_1.wav"),sound_10:require("./sound_10.wav"),sound_10_w:require("./sound_10_w.wav"),sound_11_w:require("./sound_11_w.wav"),sound_11:require("./sound_11.wav"),sound_12:require("./sound_12.wav"),sound_12_w:require("./sound_12_w.wav"),sound_13:require("./sound_13.wav"),sound_13_w:require("./sound_13_w.wav"),sound_14:require("./sound_14.wav"),sound_14_w:require("./sound_14_w.wav"),sound_15:require("./sound_15.wav"),sound_15_w:require("./sound_15_w.wav"),sound_16:require("./sound_16.wav"),sound_16_w:require("./sound_16_w.wav"),sound_17:require("./sound_17.wav"),sound_17_w:require("./sound_17_w.wav"),sound_18:require("./sound_18.wav"),sound_18_w:require("./sound_18_w.wav"),sound_19:require("./sound_19.wav"),sound_19_w:require("./sound_19_w.wav"),sound_1_w:require("./sound_1_w.wav"),sound_2:require("./sound_2.wav"),sound_20:require("./sound_20.wav"),sound_20_w:require("./sound_20_w.wav"),sound_21:require("./sound_21.wav"),sound_21_w:require("./sound_21_w.wav"),sound_22:require("./sound_22.wav"),sound_22_w:require("./sound_22_w.wav"),sound_23:require("./sound_23.wav"),sound_23_w:require("./sound_23_w.wav"),sound_24:require("./sound_24.wav"),sound_24_w:require("./sound_24_w.wav"),sound_25:require("./sound_25.wav"),sound_25_w:require("./sound_25_w.wav"),sound_26:require("./sound_26.wav"),sound_26_w:require("./sound_26_w.wav"),sound_27:require("./sound_27.wav"),sound_27_w:require("./sound_27_w.wav"),sound_28:require("./sound_28.wav"),sound_28_w:require("./sound_28_w.wav"),sound_29:require("./sound_29.wav"),sound_29_w:require("./sound_29_w.wav"),sound_2_w:require("./sound_2_w.wav"),sound_3:require("./sound_3.wav"),sound_30:require("./sound_30.wav"),sound_30_w:require("./sound_30_w.wav"),sound_31:require("./sound_31.wav"),sound_31_w:require("./sound_31_w.wav"),sound_32:require("./sound_32.wav"),sound_32_w:require("./sound_32_w.wav"),sound_33:require("./sound_33.wav"),sound_33_w:require("./sound_33_w.wav"),sound_3_w:require("./sound_3_w.wav"),sound_4:require("./sound_4.wav"),sound_4_w:require("./sound_4_w.wav"),sound_5:require("./sound_5.wav"),sound_5_w:require("./sound_5_w.wav"),sound_6:require("./sound_6.wav"),sound_6_w:require("./sound_6_w.wav"),sound_7:require("./sound_7.wav"),sound_7_w:require("./sound_7_w.wav"),sound_8:require("./sound_8.wav"),sound_8_w:require("./sound_8_w.wav"),sound_9:require("./sound_9.wav"),sound_9_w:require("./sound_9_w.wav")};
-},{"./sound_1.wav":"Jlc4","./sound_10.wav":"i8qI","./sound_10_w.wav":"c8c2","./sound_11_w.wav":"E74y","./sound_11.wav":"vYAS","./sound_12.wav":"5j/i","./sound_12_w.wav":"m8Kg","./sound_13.wav":"r0tf","./sound_13_w.wav":"QItp","./sound_14.wav":"RYOE","./sound_14_w.wav":"Nawx","./sound_15.wav":"IlE7","./sound_15_w.wav":"V54R","./sound_16.wav":"EscB","./sound_16_w.wav":"/5i2","./sound_17.wav":"IuWL","./sound_17_w.wav":"I8iS","./sound_18.wav":"mmWn","./sound_18_w.wav":"P70j","./sound_19.wav":"zfEM","./sound_19_w.wav":"w6rB","./sound_1_w.wav":"1j5Y","./sound_2.wav":"+VWu","./sound_20.wav":"CV9K","./sound_20_w.wav":"pxNJ","./sound_21.wav":"g4NR","./sound_21_w.wav":"+7H6","./sound_22.wav":"OKgB","./sound_22_w.wav":"1V/1","./sound_23.wav":"w/KB","./sound_23_w.wav":"ezoc","./sound_24.wav":"hdMy","./sound_24_w.wav":"nErq","./sound_25.wav":"AX9i","./sound_25_w.wav":"58H5","./sound_26.wav":"c/51","./sound_26_w.wav":"mQMo","./sound_27.wav":"faS2","./sound_27_w.wav":"5cfh","./sound_28.wav":"TF7f","./sound_28_w.wav":"9JSb","./sound_29.wav":"pm2J","./sound_29_w.wav":"Oker","./sound_2_w.wav":"yXBQ","./sound_3.wav":"ImXI","./sound_30.wav":"7GKE","./sound_30_w.wav":"Zcpn","./sound_31.wav":"lh2p","./sound_31_w.wav":"P/hv","./sound_32.wav":"LO6h","./sound_32_w.wav":"ullW","./sound_33.wav":"i62j","./sound_33_w.wav":"N7Fw","./sound_3_w.wav":"isCK","./sound_4.wav":"bK02","./sound_4_w.wav":"/SRE","./sound_5.wav":"+vkO","./sound_5_w.wav":"ZEUS","./sound_6.wav":"j51K","./sound_6_w.wav":"Ois7","./sound_7.wav":"0KaR","./sound_7_w.wav":"cdSX","./sound_8.wav":"DJyR","./sound_8_w.wav":"QalO","./sound_9.wav":"0utZ","./sound_9_w.wav":"v6XE"}],"l42H":[function(require,module,exports) {
+module.exports={sound_1:require("./sound_1.wav"),sound_10:require("./sound_10.wav"),sound_10_w:require("./sound_10_w.wav"),sound_11:require("./sound_11.wav"),sound_11_w:require("./sound_11_w.wav"),sound_12:require("./sound_12.wav"),sound_12_w:require("./sound_12_w.wav"),sound_13:require("./sound_13.wav"),sound_13_w:require("./sound_13_w.wav"),sound_14:require("./sound_14.wav"),sound_14_w:require("./sound_14_w.wav"),sound_15:require("./sound_15.wav"),sound_15_w:require("./sound_15_w.wav"),sound_16:require("./sound_16.wav"),sound_16_w:require("./sound_16_w.wav"),sound_17:require("./sound_17.wav"),sound_18:require("./sound_18.wav"),sound_17_w:require("./sound_17_w.wav"),sound_18_w:require("./sound_18_w.wav"),sound_19:require("./sound_19.wav"),sound_1_w:require("./sound_1_w.wav"),sound_19_w:require("./sound_19_w.wav"),sound_20:require("./sound_20.wav"),sound_2:require("./sound_2.wav"),sound_20_w:require("./sound_20_w.wav"),sound_21:require("./sound_21.wav"),sound_21_w:require("./sound_21_w.wav"),sound_22_w:require("./sound_22_w.wav"),sound_23:require("./sound_23.wav"),sound_23_w:require("./sound_23_w.wav"),sound_24:require("./sound_24.wav"),sound_24_w:require("./sound_24_w.wav"),sound_25:require("./sound_25.wav"),sound_25_w:require("./sound_25_w.wav"),sound_26:require("./sound_26.wav"),sound_26_w:require("./sound_26_w.wav"),sound_27:require("./sound_27.wav"),sound_27_w:require("./sound_27_w.wav"),sound_28:require("./sound_28.wav"),sound_29:require("./sound_29.wav"),sound_28_w:require("./sound_28_w.wav"),sound_29_w:require("./sound_29_w.wav"),sound_2_w:require("./sound_2_w.wav"),sound_3:require("./sound_3.wav"),sound_30:require("./sound_30.wav"),sound_30_w:require("./sound_30_w.wav"),sound_31:require("./sound_31.wav"),sound_31_w:require("./sound_31_w.wav"),sound_32:require("./sound_32.wav"),sound_32_w:require("./sound_32_w.wav"),sound_33:require("./sound_33.wav"),sound_33_w:require("./sound_33_w.wav"),sound_3_w:require("./sound_3_w.wav"),sound_4:require("./sound_4.wav"),sound_4_w:require("./sound_4_w.wav"),sound_5:require("./sound_5.wav"),sound_5_w:require("./sound_5_w.wav"),sound_6:require("./sound_6.wav"),sound_6_w:require("./sound_6_w.wav"),sound_7_w:require("./sound_7_w.wav"),sound_8:require("./sound_8.wav"),sound_7:require("./sound_7.wav"),sound_8_w:require("./sound_8_w.wav"),sound_9:require("./sound_9.wav"),sound_9_w:require("./sound_9_w.wav"),sound_22:require("./sound_22.wav")};
+},{"./sound_1.wav":"Jlc4","./sound_10.wav":"i8qI","./sound_10_w.wav":"c8c2","./sound_11.wav":"vYAS","./sound_11_w.wav":"E74y","./sound_12.wav":"5j/i","./sound_12_w.wav":"m8Kg","./sound_13.wav":"r0tf","./sound_13_w.wav":"QItp","./sound_14.wav":"RYOE","./sound_14_w.wav":"Nawx","./sound_15.wav":"IlE7","./sound_15_w.wav":"V54R","./sound_16.wav":"EscB","./sound_16_w.wav":"/5i2","./sound_17.wav":"IuWL","./sound_18.wav":"mmWn","./sound_17_w.wav":"I8iS","./sound_18_w.wav":"P70j","./sound_19.wav":"zfEM","./sound_1_w.wav":"1j5Y","./sound_19_w.wav":"w6rB","./sound_20.wav":"CV9K","./sound_2.wav":"+VWu","./sound_20_w.wav":"pxNJ","./sound_21.wav":"g4NR","./sound_21_w.wav":"+7H6","./sound_22_w.wav":"1V/1","./sound_23.wav":"w/KB","./sound_23_w.wav":"ezoc","./sound_24.wav":"hdMy","./sound_24_w.wav":"nErq","./sound_25.wav":"AX9i","./sound_25_w.wav":"58H5","./sound_26.wav":"c/51","./sound_26_w.wav":"mQMo","./sound_27.wav":"faS2","./sound_27_w.wav":"5cfh","./sound_28.wav":"TF7f","./sound_29.wav":"pm2J","./sound_28_w.wav":"9JSb","./sound_29_w.wav":"Oker","./sound_2_w.wav":"yXBQ","./sound_3.wav":"ImXI","./sound_30.wav":"7GKE","./sound_30_w.wav":"Zcpn","./sound_31.wav":"lh2p","./sound_31_w.wav":"P/hv","./sound_32.wav":"LO6h","./sound_32_w.wav":"ullW","./sound_33.wav":"i62j","./sound_33_w.wav":"N7Fw","./sound_3_w.wav":"isCK","./sound_4.wav":"bK02","./sound_4_w.wav":"/SRE","./sound_5.wav":"+vkO","./sound_5_w.wav":"ZEUS","./sound_6.wav":"j51K","./sound_6_w.wav":"Ois7","./sound_7_w.wav":"cdSX","./sound_8.wav":"DJyR","./sound_7.wav":"0KaR","./sound_8_w.wav":"QalO","./sound_9.wav":"0utZ","./sound_9_w.wav":"v6XE","./sound_22.wav":"OKgB"}],"l42H":[function(require,module,exports) {
 module.exports="/alphabet/awesome_1.8014f40e.wav";
 },{}],"EcVz":[function(require,module,exports) {
 module.exports="/alphabet/awesome_2.ac8723df.wav";
