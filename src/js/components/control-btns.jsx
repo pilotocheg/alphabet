@@ -63,7 +63,7 @@ export default class ControlBtns extends React.Component{
           onClick={this.handleMusic.bind(this)}
           style={{ color: this.state.music ? "#fff" : "#d12a7b" }}
         >
-          <i class="fas fa-music"></i>
+          <i className="fas fa-music"></i>
         </button>
         <ReactAudioPlayer
           src={soundTrack}
