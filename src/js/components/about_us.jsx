@@ -48,15 +48,15 @@ export default function AboutUs () {
             <h3>Дмитрієв Вячеслав</h3>
           </div>
           <div className="team-member">
-            <img src={memberPics['no-image']} alt=""/>
+            <img src={memberPics['andrew']} alt=""/>
             <h3>Абросенков Андрій</h3>
           </div>
           <div className="team-member">
-            <img src={memberPics['no-image']} alt=""/>
+            <img src={memberPics['sveta']} alt=""/>
             <h3>Харченко Світлана</h3>
           </div>
           <div className="team-member">
-            <img src={memberPics['no-image']} alt=""/>
+            <img src={memberPics['alexandr']} alt=""/>
             <h3>Бардовський Олександр</h3>
           </div>
         </div>
