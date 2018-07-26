@@ -23,7 +23,7 @@ export default class GameApp extends React.Component {
       awesomeSoundNumber: Math.floor(Math.random() * 4) + 1
     }
   }
-  
+
   handleStart() {
     if (this.state.counter === 3) {
       this.setState({counter: 0, hideStars: false});
@@ -42,21 +42,21 @@ export default class GameApp extends React.Component {
             this.awesomeSound.audioEl.play();
           } catch (err) {
             console.log(err);
-          }        
+          }
         })
       } else {
         this.alertSound.audioEl.play();
       }
     });
   }
-  
+
   handleNextGame() {
     setTimeout(() => {
       this.setState({
         start: false,
         isTrue: false,
         hideStars: this.state.counter === 3,
-        awesomeSoundNumber: Math.floor(Math.random() * 4) + 1 
+        awesomeSoundNumber: Math.floor(Math.random() * 4) + 1
       })
       if (this.state.counter === 3) {
       this.ovationSound.audioEl.play();
@@ -98,9 +98,9 @@ export default class GameApp extends React.Component {
     return (
       <div className="main-container for-game">
         {
-          !this.state.start 
-          ? <StartDiv 
-              handleStart={this.handleStart.bind(this)} 
+          !this.state.start
+          ? <StartDiv
+              handleStart={this.handleStart.bind(this)}
               counter={this.state.counter}
             />
           : <div>
@@ -112,9 +112,9 @@ export default class GameApp extends React.Component {
                 {
                   this.state.numbersArr.map(item => (
                     <RandomImage
-                      isTrue={this.state.isTrue} 
+                      isTrue={this.state.isTrue}
                       key={item}
-                      src={images['pic_' + (item + 1)]} 
+                      src={images['pic_' + (item + 1)]}
                       letterNum={item}
                       trueNum={this.state.letterNum}
                       isTrueCallback={this.isTrueCallback.bind(this)}
@@ -125,12 +125,12 @@ export default class GameApp extends React.Component {
             </div>
         }
         <div id="stars-div">
-          { 
+          {
             this.state.hideStars
             ||
             this.state.starsArr.map((img, i) => (
-              <StarImg 
-                src={img} 
+              <StarImg
+                src={img}
                 key={i}
                 ownNumber={(i + 1)}
                 counter={this.state.counter}
@@ -142,13 +142,13 @@ export default class GameApp extends React.Component {
           src={awesomeSounds['awesome_' + this.state.awesomeSoundNumber]}
           ref={elem => this.awesomeSound = elem}
           onEnded={this.playLetterSound.bind(this)}
-          muted={this.props.mute}  
+          muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={this.state.sound}
           ref={elem => this.letterSound = elem}
           onEnded={this.playWordSound.bind(this)}
-          muted={this.props.mute}  
+          muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={this.state.sound2}
@@ -161,7 +161,7 @@ export default class GameApp extends React.Component {
           ref={elem => this.ovationSound = elem}
           muted={this.props.mute}
         />
-        <ReactAudioPlayer 
+        <ReactAudioPlayer
           src={alertSound}
           ref={elem => this.alertSound = elem}
           muted={this.props.mute}

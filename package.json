@@ -40,6 +40,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",
-    "parcel-bundler": "^1.9.7"
+    "parcel-bundler": "^1.9.7",
+    "parcel-plugin-sw-precache": "^0.5.2"
   }
 }

@@ -97,11 +97,11 @@ export default class Home extends React.Component {
           <div className="content">
             <div className="description">
               <div
-                style={{ 
+                style={{
                   transform: `translateX(${this.state.translateX1text}%)`,
                   opacity: this.state.opacityText1
-                }} 
-                id="learn" 
+                }}
+                id="learn"
                 className="learn"
               >
                 <h2><span>В</span>ЧИТИСЯ</h2>
@@ -112,12 +112,12 @@ export default class Home extends React.Component {
                   <button className="btn">Вчитися</button>
                 </Link>
               </div>
-              <div 
-                style={{ 
-                  transform: `translateX(${this.state.translateX2text}%)`, 
+              <div
+                style={{
+                  transform: `translateX(${this.state.translateX2text}%)`,
                   opacity: this.state.opacityText2
-                }} 
-                id="play" 
+                }}
+                id="play"
                 className="play"
               >
                 <h2><span>Г</span>РАТИ</h2>
@@ -130,35 +130,35 @@ export default class Home extends React.Component {
               </div>
             </div>
             <div className="images">
-              <img 
-                style={{ 
+              <img
+                style={{
                   transform: `translateX(${this.state.translateX1image}%)`,
-                  opacity: this.state.opacityImage1 
-                }} 
-                id="slider1" 
+                  opacity: this.state.opacityImage1
+                }}
+                id="slider1"
                 src={pic1}
               />
-              <img style={{ 
+              <img style={{
                   transform: `translateX(${this.state.translateX2image}%)`,
-                  opacity: this.state.opacityImage2 
-                }} 
-                id="slider2" 
+                  opacity: this.state.opacityImage2
+                }}
+                id="slider2"
                 src={pic2}
               />
             </div>
-            <button 
+            <button
               style={{ opacity: this.state.translateX2text ? "1" : "0.5" }}
-              className="nav" 
-              id="nav_left" 
+              className="nav"
+              id="nav_left"
               onClick={this.slideBackward.bind(this)}
               onMouseOver={this.onButtonHover.bind(this)}
               onMouseLeave={this.onButtonUnhover.bind(this)}
             >&lsaquo;
             </button>
-            <button 
+            <button
               style={{ opacity: !this.state.translateX2text ? "1" : "0.5" }}
-              className="nav" 
-              id="nav_right" 
+              className="nav"
+              id="nav_right"
               onClick={this.slideForward.bind(this)}
               onMouseOver={this.onButtonHover.bind(this)}
               onMouseLeave={this.onButtonUnhover.bind(this)}

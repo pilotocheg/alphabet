@@ -24,7 +24,7 @@ export class StartDiv extends React.Component {
     return (
       <div id="start-div" style={{ transform: `translateY(${this.state.translateY}%)` }}>
         {
-          !this.props.counter 
+          !this.props.counter
           ? <div>
               <h2 id="start-div-header">Весела гра</h2>
               <p id="start-div-text">
@@ -34,9 +34,9 @@ export class StartDiv extends React.Component {
                 знайти правильну картинку три рази.
               </p>
               <button id="start-btn" onClick={this.props.handleStart}>давай почнемо</button>
-            </div> 
+            </div>
           : (
-              this.props.counter === 3 
+              this.props.counter === 3
               ? <div>
                   <h2 id="start-div-header">Перемога!</h2>
                   <img id="smile-pic" src={smilePic} alt=""/>
@@ -46,7 +46,7 @@ export class StartDiv extends React.Component {
                     <img src={starPic} alt=""/>
                   </div>
                   <button id="start-btn" onClick={this.props.handleStart}>Грати ще раз</button>
-                </div> 
+                </div>
               : <div>
                   <img id="smile-pic" src={smilePic} alt=""/>
                   <button id="start-btn" onClick={this.props.handleStart}>Продовжити</button>
@@ -61,7 +61,7 @@ export class StartDiv extends React.Component {
 export class RandomImage extends React.Component {
   constructor() {
     super();
-    
+
     this.state = {
       opacity: 0,
     }
@@ -78,7 +78,7 @@ export class RandomImage extends React.Component {
       })
     }, 3)
   }
-  
+
   handleClick(e) {
     const picStyle = e.target.style;
     if (!this.props.isTrue) {
@@ -99,10 +99,10 @@ export class RandomImage extends React.Component {
   componentDidMount(){
     this.startAnimation();
   }
-  
+
   render () {
     return (
-      <img 
+      <img
         style={{ opacity: this.state.opacity }}
         src={this.props.src}
         onClick={this.handleClick.bind(this)}
@@ -141,7 +141,7 @@ export class StarImg extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.counter === this.props.ownNumber) {
-      this.setState({ 
+      this.setState({
         opacity: 1,
       }, () => {
         try {
@@ -156,10 +156,10 @@ export class StarImg extends React.Component {
 
   render() {
     return(
-      <img 
-        src={this.props.src} 
+      <img
+        src={this.props.src}
         className="game-stars"
-        style={{ 
+        style={{
           opacity: this.state.opacity,
           transform: `scale(${this.state.scale})`
         }}
