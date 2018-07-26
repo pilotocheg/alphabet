@@ -1,47 +1,47 @@
 {
-    "manifest_version": 1,
-    "name": "Весела Абетка",
-    "short_name": "Абетка",
-    "lang": "ua-UA",
-    "icons": [
-        {
-            "src": "./favicon/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },{
-            "src": "./favicon/android-chrome-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
-        },{
-            "src": "./favicon/apple-touch-icon.png",
-            "sizes": "180x180",
-            "type": "image/png"
-         }, {
-            "src": "./favicon/android-chrome-256x256.png",
-            "sizes": "256x256",
-            "type": "image/png"
+  "name": "Весела Абетка",
+  "short_name": "Абетка",
+  "description": "Інтерактивна Українська абетка для дітей",
+  "lang": "ua-UA",
+  "version": "1.1",
+  "start_url": "/alphabet",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#8EC63B",
+  "theme_color": "#F9911A",
+  "icons": [
+      {
+          "src": "./favicon/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },{
+          "src": "./favicon/android-chrome-256x256.png",
+          "sizes": "256x256",
+          "type": "image/png"
+      },{
+          "src": "./favicon/apple-touch-icon.png",
+          "sizes": "180x180",
+          "type": "image/png"
         }, {
-            "src": "./favicon/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }, {
-            "src": "./favicon/mstile-150x150.png",
-            "sizes": "150x150",
-            "type": "image/png"
-        }, {
-            "src": "./favicon/favicon-32x32.png",
-            "sizes": "32x32",
-            "type": "image/png"
-        }, {
-            "src": "./favicon/favicon-16x16.png",
-            "sizes": "16x16",
-            "type": "image/png" 
-        }
-    ],
-    "version": "1.1",
-    "start_url": "/alphabet",
-    "display": "standalone",
-    "orientation": "landscape",
-    "background_color": "#8dc63b",
-    "theme_color": "#f9911a"
+          "src": "./favicon/android-chrome-256x256.png",
+          "sizes": "256x256",
+          "type": "image/png"
+      }, {
+          "src": "./favicon/android-chrome-192x192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      }, {
+          "src": "./favicon/mstile-150x150.png",
+          "sizes": "150x150",
+          "type": "image/png"
+      }, {
+          "src": "./favicon/favicon-32x32.png",
+          "sizes": "32x32",
+          "type": "image/png"
+      }, {
+          "src": "./favicon/favicon-16x16.png",
+          "sizes": "16x16",
+          "type": "image/png"
+      }
+  ]
 }

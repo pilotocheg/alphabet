@@ -40,18 +40,7 @@
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",
-<<<<<<< HEAD
     "parcel-bundler": "^1.9.7",
     "parcel-plugin-sw-precache": "^0.5.2"
-  },
-  "sw-precache": {
-    "staticFileGlobs": [
-      "https://use.fontawesome.com/releases/v5.1.0/css/all.css",
-      "https://fonts.googleapis.com/css?family=EB+Garamond:400,500,600,700,800",
-      "./alphabet/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,wav,mp3}"
-    ]
-=======
-    "parcel-bundler": "^1.9.7"
->>>>>>> master
   }
 }
