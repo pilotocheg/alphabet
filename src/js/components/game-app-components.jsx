@@ -3,32 +3,22 @@ import smilePic from '../../img/smile-pic.png';
 import starPic from '../../img/star.png';
 
 export class StartDiv extends React.Component {
-  constructor() {
-    super();
 
-    this.state = {
-      translateY: 0
-    }
-  }
-  componentWillMount() {
-    this.interval = setInterval(() => {
-      this.setState({
-        translateY: this.state.translateY + 0.5
-      })
-      if (this.state.translateY > 40) {
-        clearInterval(this.interval);
-      }
-    }, 3)
+  componentDidMount() {
+    this.messageWindow.animate([
+      {transform: 'translateY(0)'},
+      {transform: 'translateY(40%)'}
+    ], {duration: 400})
   }
   render() {
     return (
-      <div id="start-div" style={{ transform: `translateY(${this.state.translateY}%)` }}>
+      <div id="start-div" ref={e => this.messageWindow = e}>
         {
           !this.props.counter
           ? <div>
               <h2 id="start-div-header">Весела гра</h2>
               <p id="start-div-text">
-                Це ігровий режим. Правила дуже прості: 
+                Це ігровий режим. Правила дуже прості:
                 необхідно з трьох картинок обрати ту, яка
                 відповідає букві зліва. Щоб виграти, необхідно
                 знайти правильну картинку три рази.
@@ -62,21 +52,7 @@ export class RandomImage extends React.Component {
   constructor() {
     super();
 
-    this.state = {
-      opacity: 0,
-    }
-  }
-
-  startAnimation() {
-    this.interval = setInterval(() => {
-      if (this.state.opacity >= 1) {
-        clearInterval(this.interval);
-        return;
-      }
-      this.setState({
-        opacity: this.state.opacity += 0.01,
-      })
-    }, 3)
+   this.state = {};
   }
 
   handleClick(e) {
@@ -97,13 +73,16 @@ export class RandomImage extends React.Component {
   }
 
   componentDidMount(){
-    this.startAnimation();
+    this.image.animate([
+      {opacity: '0'},
+      {opacity: '1'}
+    ], {duration: 600})
   }
 
   render () {
     return (
       <img
-        style={{ opacity: this.state.opacity }}
+        ref={e => this.image = e}
         src={this.props.src}
         onClick={this.handleClick.bind(this)}
         onMouseLeave={e => {
@@ -121,22 +100,15 @@ export class StarImg extends React.Component {
 
     this.state = {
       opacity: 0,
-      scale: 1,
     }
   }
-  transformAnimation() {
-    this.interval = setInterval(() => {
-        this.setState({
-          scale: this.state.scale += 0.01,
-        })
-      if (this.state.scale >= 1.3) {
-        clearInterval(this.interval);
-        this.setState({
-          scale: 1,
-          animDone: true
-        })
-      }
-    }, 15)
+  elemAnimation() {
+    this.starPic.animate([
+      { transform: 'scale(1)' },
+      { transform: 'scale(1.3)' },
+      { transform: 'scale(1)' }
+    ], {duration: 700})
+    this.setState({animDone: true});
   }
 
   componentWillReceiveProps(nextProps) {
@@ -145,24 +117,22 @@ export class StarImg extends React.Component {
         opacity: 1,
       }, () => {
         try {
-          if (!this.state.animDone) this.transformAnimation();
+          if (!this.state.animDone) this.elemAnimation();
         } catch (err) {
           console.log(err);
         }
       })
     }
-    if (!nextProps.counter) this.setState({opacity: 0})
+    if (!nextProps.counter) this.setState({opacity: 0});
   }
 
   render() {
     return(
       <img
+        ref={e => this.starPic = e}
         src={this.props.src}
         className="game-stars"
-        style={{
-          opacity: this.state.opacity,
-          transform: `scale(${this.state.scale})`
-        }}
+        style={{ opacity: this.state.opacity }}
       />
     )
   }

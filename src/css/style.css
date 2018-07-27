@@ -13,8 +13,10 @@ body {
 }
 
 #main-div {
-  width: 1160px;
+  width: 100%;
   margin: 0 auto;
+  max-width: 1000px;
+  /* max-height: 570px; */
 }
 
 #root {
@@ -24,83 +26,85 @@ body {
   height: 100%;
   display: inline-block;
   vertical-align: top;
-  padding-top: 20px;
+  padding-top: 10px;
+  margin-left: -20px;
 }
 
 #btn-container button {
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border-radius: 40%;
   cursor: pointer;
   outline: none;
-  margin: 20px 15px;
+  margin: 7px 5px;
   background: #ffcc00;
-  border: 3px solid #F9911A;
-  font-size: 20px;
+  border: 2px solid #F9911A;
+  font-size: 15px;
   line-height: 1;
   color: white;
   transition: border-color .3s, color .3s;
 }
 
 #btn-container button:hover {
-  border: 3px solid #d12a7b;
+  border: 2px solid #d12a7b;
   color: #d12a7b;
 }
 
 .main-container {
 	background: linear-gradient(to right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('../img/back.jpg');
 	background-size: contain;
-  /* width: calc(100% - 160px); */
-  width: 1000px;
-	min-height: 570px;
+  width: calc(100% - 60px);
+  max-width: 650px;
+  height: 95vh;
+  max-height: 570px;
 	border-radius: 20px;
 	border: 3px solid #F9911A;
 	-webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
-  padding: 15px 50px 15px;
+  padding: 5px 10px 5px;
   display: inline-block;
   vertical-align: top;
   text-align: left;
-  margin: 20px 80px 0 0;
+  margin: 5px 0 0;
   position: relative;
   overflow: hidden;
 }
 
 .main-letter {
-	font-size: 350px;
+	font-size: 160px;
 	line-height: 1;
-	padding: 20px 0;
+	padding: 0;
 	color: #F9911A;
   text-shadow: 5px 3px 0px #8EC63B;
-  min-height: 400px;
-  min-width: 350px;
+  min-height: 180px;
+  min-width: 150px;
   display: inline-block;
   vertical-align: middle;
+  text-align: center;
 }
 
 #buttons-container {
-	text-align: center;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .letters {
 	display: inline-block;
-	margin: 5px;
+	margin: 3px 5px;
 	background: #ffdd83;
 	border: 2px solid #F9911A;
 	border-radius: 5px;
-	width: 38px;
-	height: 40px;
-	font-size: 24px;
+	width: 30px;
+	height: 30px;
+	font-size: 20px;
 	line-height: 1;
 	font-weight: 900;
-  /* color: #8b1e99; */
   color: #d12a7b;
   text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.753);
   cursor: pointer;
   outline: none;
   padding: 0;
-	/*text-shadow: 1px 1px 0px orange;*/
 }
 
 .letters:hover {
@@ -123,20 +127,20 @@ body {
 }
 
 #picture {
-  width: calc(100% - 410px);
+  width: calc(100% - 220px);
   vertical-align: middle;
 }
 
 #picture img {
-  height: 250px;
-  margin-bottom: 30px;
+  height: 125px;
+  margin-bottom: 5px;
 }
 
 .word {
-	font-size: 60px;
+	font-size: 30px;
 	font-weight: 700;
 	line-height: 1;
-	margin: 0;
+	margin: 0 0 10px 0;
 	color: #4a3faf;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 }
@@ -161,7 +165,7 @@ body {
 /* game app styles */
 
 #game-letter {
-  text-shadow: 8px 8px 0px #8EC63B;
+  text-shadow: 5px 3px 0px #8EC63B;
 }
 
 #pics-container {
@@ -170,9 +174,9 @@ body {
 }
 
 #pics-container img {
-  max-width: 230px;
-  max-height: 240px;
-  margin: 15px;
+  max-width: 130px;
+  max-height: 140px;
+  margin: 10px;
   cursor: pointer;
   transition: transform .2s;
   border-radius: 10px;
@@ -188,34 +192,38 @@ body {
   margin: 0 auto;
 }
 #start-div {
-  max-width: 400px;
+  max-width: 350px;
   margin: 0 auto;
   background-color: #ffffffc2;
   border: 3px solid #F9911A;
-  padding: 5px 30px 15px;
+  padding: 5px 15px 10px;
   border-radius: 10px;
+  transform: translateY(40%);
+  position: relative;
+  z-index: 3;
 }
 
 #start-div-header {
   margin: 0;
+  line-height: 1.1;
   color: #F9911A;
   text-shadow: 2px 2px 0px #8EC63B;
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
 }
 
 #start-div-text {
   margin-top: 0;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 700;
-  color: #8EC63B;
+  color: rgb(26, 26, 26);
   text-align: justify;
 }
 
 #start-btn {
   display: block;
   margin: 0 auto;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   border: 3px solid #F9911A;
@@ -224,7 +232,7 @@ body {
   background-color: #ffcc00;
   color: #fff;
   cursor: pointer;
-  padding: 10px 15px;
+  padding: 7px 10px;
   transition: border-color .3s, color .3s;
 }
 
@@ -236,25 +244,282 @@ body {
 #stars-div {
   position: absolute;
   left: 20px;
-  bottom: 20px;
+  bottom: 10px;
 }
 
 .game-stars {
-  width: 60px;
+  width: 45px;
 }
 
 #smile-pic {
-  width: 100px;
+  width: 60px;
   display: block;
-  margin: 15px auto;
+  margin: 10px auto;
 }
 
 #stars-for-message {
-  display: block;
+  display: none;
   width: 100%;
   text-align: center;
   margin: 0 auto;
 }
 #stars-for-message img {
-  width: 50px;
+  width: 30px;
+}
+
+/* rotate message */
+
+#rotate-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#rotate-message p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (orientation: landscape) and (min-height: 360px) {
+  #btn-container {
+    margin-left: -10px;
+  }
+
+  #btn-container button {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .main-letter {
+    min-height: 210px;
+    min-width: 200px;
+    font-size: 190px;
+  }
+
+  .letters {
+    width: 32px;
+    height: 32px;
+  }
+  #picture img {
+    height: 140px;
+  }
+  .word {
+    font-size: 35px;
+  }
+  #pics-container img {
+    max-width: 145px;
+    max-height: 150px;
+  }
+  #stars-for-message {
+    display: block;
+    margin-top: -10px;
+  }
+}
+
+@media(min-height: 400px) {
+  
+}
+
+@media (orientation: landscape) and (min-height: 400px) {
+  #btn-container button {
+    width: 45px;
+    height: 45px;
+    border: 3px solid #F9911A;
+    margin: 7px;
+  }
+  #btn-container button:hover {
+    border: 3px solid #d12a7b;
+    color: #d12a7b;
+  }
+  .main-letter {
+    font-size: 230px;
+    min-height: 250px;
+    min-width: 250px;
+  }
+
+  .letters {
+    width: 35px;
+    height: 35px;
+  }
+
+  #picture {
+    width: calc(100% - 300px);
+  }
+  #picture img {
+    height: 185px;
+  }
+
+  .word {
+    font-size: 40px;
+  }
+  #pics-container img {
+    max-width: 150px;
+    max-height: 170px;
+  }
+  #start-div-header {
+    line-height: 1.5;
+  }
+  #start-div-text {
+    font-size: 15px;
+  }
+
+  #stars-for-message {
+    margin-top: 0;
+  }
+  #smile-pic {
+    width: 70px;
+  }
+  .game-stars {
+    width: 50px;
+  }
+  #game-letter {
+    font-size: 250px;
+    text-shadow: 6px 5px 0px #8EC63B;
+  }
+}
+
+@media (orientation: landscape) and (min-height: 568px) {
+  .main-container {
+    max-width: initial;
+    width: calc(100% - 100px);
+    padding: 10px 20px;
+  }
+
+  #btn-container button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .main-letter {
+    font-size: 320px;
+    min-height: 370px;
+    min-width: 320px;
+    text-shadow: 5px 3px 0px #8EC63B;
+  }
+
+  .letters {
+    width: 38px;
+    height: 40px;
+    margin: 5px;
+    font-size: 28px;
+  }
+
+  #picture {
+    width: calc(100% - 400px);
+  }
+  #picture img {
+    height: 220px;
+    margin-bottom: 30px;
+  }
+
+  .word {
+    font-size: 60px;
+    margin: 0;
+  }
+  #game-letter {
+    font-size: 320px;
+  }
+  #pics-container img {
+    max-width: 170px;
+    max-height: 200px;
+    margin: 10px;
+  }
+  #start-div {
+    max-width: 450px;
+    padding: 5px 30px 15px;
+  }
+  #start-div-header {
+    line-height: 1.5;
+    font-size: 50px;
+  }
+  #start-div-text {
+    font-size: 18px;
+  }
+
+  #start-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+
+  #stars-for-message {
+    margin-top: 0;
+  }
+  #stars-for-message img {
+    width: 50px;
+  }
+  #smile-pic {
+    width: 100px;
+    margin: 15px auto;
+  }
+  .game-stars {
+    width: 60px;
+  }
+  #stars-div {
+    bottom: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  #btn-container {
+    padding-top: 20px;
+  }
+  #btn-container button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin: 10px 15px;
+  }
+
+  #buttons-container {
+    max-width: 860px;
+  }
+
+  .main-container {
+    margin-top: 20px;
+    max-width: initial;
+    width: calc(100% - 100px);
+    padding: 10px 20px;
+  }
+
+  .main-letter {
+    padding: 20px;
+    font-size: 350px;
+    min-height: 400px;
+    min-width: 350px;
+  }
+   #picture {
+    width: calc(100% - 450px);
+  }
+  #main-div {
+    max-width: 1100px;
+  }
+  #game-letter {
+    text-shadow: 8px 8px 0px #8EC63B;
+  }
+  #pics-container img {
+    max-width: 200px;
+    max-height: 240px;
+    margin: 10px;
+  }
+
+}
+
+@media (min-width: 1200px) {
+  .main-container {
+    padding: 15px 50px;
+  }
+  #picture {
+  width: calc(100% - 410px);
+  }
+  #picture img {
+    height: 250px;
+  }
+  #pics-container img {
+    max-width: 230px;
+    max-height: 240px;
+    margin: 15px;
+  }
 }

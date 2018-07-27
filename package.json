@@ -4,7 +4,7 @@
   "description": "interactive alphabet app",
   "scripts": {
     "build": "rm -rf dist && parcel build src/index.html --public-url /alphabet && cp ./dist/index.html ./dist/404.html",
-    "start": "parcel src/index.html -p 3000",
+    "start": "rm -rf dist .cache && parcel src/index.html -p 3000",
     "publish": "gh-pages -d dist"
   },
   "keywords": [

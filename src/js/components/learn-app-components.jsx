@@ -22,7 +22,7 @@ export class LetterBtn extends React.Component {
 
   render() {
     return(
-      <button 
+      <button
         className="letters"
         onClick={ this.takeData.bind(this) }
       >
@@ -33,57 +33,28 @@ export class LetterBtn extends React.Component {
 }
 
 export class MainLetter extends React.Component{
-  constructor() {
-    super();
-
-    this.state = {
-      translateX: -100,
-      translateY: 0,
-      varForTranslateY: -0.2,
-      opacity: 0
-    }
-  }
   letterAnimation() {
-    this.interval = setInterval(() => {
-      if(this.state.translateY <= -10) {
-        this.setState({
-          varForTranslateY: 0.2
-        })
-      }
-      if (this.state.translateX >= 0) {
-        clearInterval(this.interval)
-        return;
-      }
-      this.setState({
-        translateX: this.state.translateX += 1,
-        translateY: this.state.translateY += this.state.varForTranslateY,
-        opacity: this.state.opacity += 0.01
-      })
-    }, 5)
+    this.mainLetter.animate([
+      {transform: 'translate(-100%, 0)', opacity: '0'},
+      {transform: 'translate(-50%, -10%)', opacity: '0.5'},
+      { transform: 'translate(0, 0)', opacity: '1' },
+    ],{duration: 700})
   }
   componentDidMount() {
     if(this.props.mode === 'game') {
       this.letterAnimation();
     }
   }
-  
+
   componentWillReceiveProps(props) {
     if(props.mode !== 'learn' || props.renderPic || this.props.handleSound !== props.handleSound) return;
-    if (this.state.translateX >= 0) {
-      this.setState({
-        translateX: -100,
-        translateY: 0,
-        opacity: 0,
-        varForTranslateY: -0.2
-      })
-    }
     this.letterAnimation();
   }
   render() {
     return (
-      <div 
-        style={{ transform: `translate(${this.state.translateX}%, ${this.state.translateY}%)`, opacity: this.state.opacity }}
-        className="main-letter" 
+      <div
+        ref={e => this.mainLetter = e}
+        className="main-letter"
         id={this.props.id}
       >
         { this.props.bigLetter }
@@ -93,61 +64,35 @@ export class MainLetter extends React.Component{
 }
 
 export class Pic extends React.Component{
-  constructor() {
-    super();
-
-    this.state = {
-      opacity: 0,
-    }
-  }
-
   startAnimation() {
-    this.interval = setInterval(() => {
-      if (this.state.opacity >= 1) {
-        clearInterval(this.interval);
-        return;
-      }
-      this.setState({
-        opacity: this.state.opacity += 0.01
-      })
-    }, 3)
+    this.pic.animate([
+      { opacity: 0 },
+      { opacity: 1 }
+    ], { duration: 700 })
   }
 
   componentWillReceiveProps(props) {
     if (this.props.handleSound !== props.handleSound) return;
-    if(this.state.opacity >= 1) this.setState({ opacity: 0 });
     this.startAnimation();
   }
 
   render() {
     return (
-      <img 
+      <img
         src={ this.props.src }
-        style={{ opacity: this.state.opacity }}
+        ref={e => this.pic = e}
       />
     )
   }
 }
 
 export class Word extends React.Component{
-  constructor() {
-    super();
-
-    this.state = {
-      opacity: 0,
-    }
-  }
 
   startAnimation() {
-    this.interval = setInterval(() => {
-      if (this.state.opacity >= 1) {
-        clearInterval(this.interval);
-        return;
-      }
-      this.setState({
-        opacity: this.state.opacity += 0.01
-      })
-    }, 3)
+    this.word.animate([
+      {opacity: 0},
+      {opacity: 1}
+    ], {duration: 700})
   }
 
   componentDidMount() {
@@ -158,15 +103,14 @@ export class Word extends React.Component{
 
   componentWillReceiveProps(props) {
     if(this.props.mode !== 'learn' || this.props.handleSound !== props.handleSound) return;
-    if(this.state.opacity >= 1) this.setState({ opacity: 0 });
     this.startAnimation();
   }
   render() {
     return (
-      <p 
-        style={{ opacity: this.state.opacity }}
+      <p
+        ref={e => this.word = e}
         id={this.props.id}
-        className="word" 
+        className="word"
         dangerouslySetInnerHTML={ { __html: this.props.word } }
       ></p>
     )
