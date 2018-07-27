@@ -276,11 +276,29 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  background-color: #8EC63B;
+  z-index: 10;
+  display: none;
 }
 
 #rotate-message p {
   font-size: 20px;
   font-weight: 700;
+}
+
+#rotate-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (orientation: portrait) {
+  #rotate-message {
+    display: block;
+  }
 }
 
 @media (orientation: landscape) and (min-height: 360px) {
@@ -318,10 +336,6 @@ body {
     display: block;
     margin-top: -10px;
   }
-}
-
-@media(min-height: 400px) {
-  
 }
 
 @media (orientation: landscape) and (min-height: 400px) {
