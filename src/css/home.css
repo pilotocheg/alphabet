@@ -1,26 +1,30 @@
+body {
+	overflow-x: hidden;
+}
+
 .container {
   background: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('../img/back.jpg');
 	background-repeat: repeat;
 	background-size: content;
   width: 100%;
-  height: 100vh;
+  height: 100%;
 	padding: 0 80px;
 }
 
 .s_width {
-	max-width: 1170px;
+	max-width: 300px;
 	min-width: 800px;
 	position: relative;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 
 header {
-  text-align: left;
+  text-align: center;
 }
 
 header h1 {
-	font-size: 60px;
+	font-size: 23px;
 	font-weight: bold;
 	color: #F9911A;
 	text-shadow: 3px 3px 0px #8EC63B; 
@@ -33,24 +37,24 @@ header h1 {
 .stroke {
 	position: relative;
 	z-index: 5;
-	font-size: 61px;
+	font-size: 45px;
 	-webkit-text-stroke: 1px white;
 }
 
 #big-letter {
 	z-index: 0;
 	line-height: 1;
-	font-size: 210px;
+	font-size: 100px;
 	position: absolute;
 	color: #f7711a;
-	top: -53px;
-  right: -80px;
+	top: -40px;
+  right: -60px;
 	text-shadow: 6px 5px 0px #8EC63B;   
 }
 
 #second-word {
 	position: relative;
-	right: -240px;
+	right: -200px;
 
 }
 
@@ -69,7 +73,10 @@ header h1 {
 }
 
 .navigation {
-  float: right;
+	top: 190px;
+	left: -50px;;
+	position: absolute;
+  /* float: right; */
   margin-top: 30px;
 }
 .nav_link {
@@ -97,8 +104,8 @@ header h1 {
 }
 
 .content {
-	margin-top: 30px;
-	width: 100%;
+	margin-top: 60px;
+	/* width: 100%; */
 	position: relative;
 }
 
@@ -106,7 +113,7 @@ header h1 {
 	text-align: center;
 	margin-bottom: 20px;
 	font-size: 46px;
-	line-height: 1;
+	line-height: 1;	
 	color: #4a3faf;
 	margin-top: 0;
 }
@@ -122,11 +129,12 @@ header h1 {
 
 
 .description {
+	text-align: center;
   position: relative;
 	overflow: hidden;
 	width: 535px;
-	height: 242px;
-  margin: 30px 20px 30px 0;
+	height: 280px;
+  margin: 110px 20px 30px 0;
 }
 
 .description div {
@@ -134,7 +142,7 @@ header h1 {
 }
 
 .description p {
-  max-width: 500px;
+  max-width: 400px;
   color: #F7711A;	
   font-size: 24px;
   font-weight: 700;
@@ -179,6 +187,7 @@ header h1 {
 }
 
 .images {
+	display: none;
 	width: 600px;
 	height: 335px;
 	overflow: hidden;
@@ -221,7 +230,7 @@ header h1 {
 	transform: translateY(-50%);
 }
 #nav_right {
-	right: -70px;
+left: 410px;
 	top: 50%;
 	transform: translateY(-50%);
 }
