@@ -14,40 +14,44 @@ class MainDiv extends React.Component {
 
     this.state = {
       mute: false,
-      orientation: window.orientation,
-      width: window.innerWidth
+      isLandscape: window.outerWidth > window.outerHeight
     };
-    this.orientationCallback = () => {
-        this.setState({
-          orientation: window.orientation,
-          width: window.innerWidth
-        }, () => {
-          console.log(this.state.orientation)
-        });
-    }
+    // console.log(this.state.isLandscape)
     this.callback = this.orientationCallback.bind(this);
   }
 
+  orientationCallback() {
+    let isTrue = window.outerWidth > window.outerHeight;
+    if (isTrue && this.state.isLandscape !== isTrue) {
+      this.setState({
+        isLandscape: isTrue
+      }, () => {
+        // console.log(this.state.isLandscape)
+      });
+    } else if (!isTrue && this.state.isLandscape !== isTrue ) {
+      this.setState({
+        isLandscape: isTrue
+      }, () => {
+        // console.log(this.state.isLandscape)
+      });
+    }
+  }
   isMutedCallback(mute) {
     this.setState({
       mute: mute
     })
   }
   componentDidMount() {
-    window.addEventListener('orientationchange', this.callback);
     window.addEventListener('resize', this.callback);
   }
-  componentWillUnmount() {
-    window.removeEventListener('orientationchange', this.callback);
-    window.removeEventListener('resize', this.callback);
 
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.callback);
   }
 
   render() {
     return(
-      this.state.orientation === 90
-      || this.state.orientation === -90
-      || this.state.width >= 992
+      this.state.isLandscape
       ? <div id="main-div">
           <ControlBtns isMutedCallback={this.isMutedCallback.bind(this)}/>
           <Route exact path="/alphabet/learn" render={() => (

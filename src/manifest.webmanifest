@@ -1,13 +1,13 @@
 {
   "name": "Весела Абетка",
-  "short_name": "Абетка",
+  "short_name": "Весела Абетка",
   "description": "Інтерактивна Українська абетка для дітей",
   "lang": "ua",
   "version": "1.1",
-  "start_url": "/alphabet",
-  "display": "fullscreen",
+  "start_url": "/alphabet/learn",
+  "display": "standalone",
   "orientation": "landscape",
-  "background_color": "#F9911A",
+  "background_color": "#8EC63B",
   "theme_color": "#8EC63B",
   "icons": [
     {

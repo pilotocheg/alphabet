@@ -41,6 +41,8 @@ body {
   background: #ffcc00;
   border: 2px solid #F9911A;
   font-size: 15px;
+  text-align: center;
+  padding: 1px;
   line-height: 1;
   color: white;
   transition: border-color .3s, color .3s;
@@ -502,7 +504,7 @@ body {
   #pics-container img {
     max-width: 200px;
     max-height: 240px;
-    margin: 10px;
+    margin: 15px;
   }
 
 }
@@ -520,6 +522,5 @@ body {
   #pics-container img {
     max-width: 230px;
     max-height: 240px;
-    margin: 15px;
   }
 }
