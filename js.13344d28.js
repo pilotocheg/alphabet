@@ -40,10 +40,10 @@ module.exports="/alphabet/star.6ab0d708.png";
 module.exports="/alphabet/pic_1.999e7bfa.png";
 },{}],"cYHH":[function(require,module,exports) {
 module.exports="/alphabet/pic_10.6295bfc7.png";
-},{}],"t0lH":[function(require,module,exports) {
-module.exports="/alphabet/pic_11.dff33aab.png";
 },{}],"IGTa":[function(require,module,exports) {
 module.exports="/alphabet/pic_12.a43035cf.png";
+},{}],"t0lH":[function(require,module,exports) {
+module.exports="/alphabet/pic_11.dff33aab.png";
 },{}],"bLY4":[function(require,module,exports) {
 module.exports="/alphabet/pic_13.a89562aa.png";
 },{}],"ECiu":[function(require,module,exports) {
@@ -98,13 +98,13 @@ module.exports="/alphabet/pic_5.1d296516.png";
 module.exports="/alphabet/pic_6.4d7aa4b1.png";
 },{}],"1o5j":[function(require,module,exports) {
 module.exports="/alphabet/pic_7.f912c96c.png";
-},{}],"aUMV":[function(require,module,exports) {
-module.exports="/alphabet/pic_8.40fdd6b2.png";
 },{}],"nMsV":[function(require,module,exports) {
 module.exports="/alphabet/pic_9.98e7c1ec.png";
+},{}],"aUMV":[function(require,module,exports) {
+module.exports="/alphabet/pic_8.40fdd6b2.png";
 },{}],"+TCm":[function(require,module,exports) {
-module.exports={pic_1:require("./pic_1.png"),pic_10:require("./pic_10.png"),pic_11:require("./pic_11.png"),pic_12:require("./pic_12.png"),pic_13:require("./pic_13.png"),pic_14:require("./pic_14.png"),pic_15:require("./pic_15.png"),pic_16:require("./pic_16.png"),pic_17:require("./pic_17.png"),pic_18:require("./pic_18.png"),pic_19:require("./pic_19.png"),pic_2:require("./pic_2.png"),pic_20:require("./pic_20.png"),pic_21:require("./pic_21.png"),pic_22:require("./pic_22.png"),pic_23:require("./pic_23.png"),pic_24:require("./pic_24.png"),pic_25:require("./pic_25.png"),pic_26:require("./pic_26.png"),pic_27:require("./pic_27.png"),pic_28:require("./pic_28.png"),pic_29:require("./pic_29.png"),pic_3:require("./pic_3.png"),pic_30:require("./pic_30.png"),pic_31:require("./pic_31.png"),pic_32:require("./pic_32.png"),pic_33:require("./pic_33.png"),pic_4:require("./pic_4.png"),pic_5:require("./pic_5.png"),pic_6:require("./pic_6.png"),pic_7:require("./pic_7.png"),pic_8:require("./pic_8.png"),pic_9:require("./pic_9.png")};
-},{"./pic_1.png":"KFwa","./pic_10.png":"cYHH","./pic_11.png":"t0lH","./pic_12.png":"IGTa","./pic_13.png":"bLY4","./pic_14.png":"ECiu","./pic_15.png":"ycl/","./pic_16.png":"0Ldb","./pic_17.png":"KOQ1","./pic_18.png":"oK9m","./pic_19.png":"E/K5","./pic_2.png":"isi8","./pic_20.png":"PSzQ","./pic_21.png":"aJjM","./pic_22.png":"/FUm","./pic_23.png":"BPdS","./pic_24.png":"0bB/","./pic_25.png":"ueNg","./pic_26.png":"gLM9","./pic_27.png":"YGsF","./pic_28.png":"XCvW","./pic_29.png":"4DR7","./pic_3.png":"1cFB","./pic_30.png":"2nLg","./pic_31.png":"cE3a","./pic_32.png":"1nQT","./pic_33.png":"Afbz","./pic_4.png":"Ewc/","./pic_5.png":"Zr5t","./pic_6.png":"+FrO","./pic_7.png":"1o5j","./pic_8.png":"aUMV","./pic_9.png":"nMsV"}],"Jlc4":[function(require,module,exports) {
+module.exports={pic_1:require("./pic_1.png"),pic_10:require("./pic_10.png"),pic_12:require("./pic_12.png"),pic_11:require("./pic_11.png"),pic_13:require("./pic_13.png"),pic_14:require("./pic_14.png"),pic_15:require("./pic_15.png"),pic_16:require("./pic_16.png"),pic_17:require("./pic_17.png"),pic_18:require("./pic_18.png"),pic_19:require("./pic_19.png"),pic_2:require("./pic_2.png"),pic_20:require("./pic_20.png"),pic_21:require("./pic_21.png"),pic_22:require("./pic_22.png"),pic_23:require("./pic_23.png"),pic_24:require("./pic_24.png"),pic_25:require("./pic_25.png"),pic_26:require("./pic_26.png"),pic_27:require("./pic_27.png"),pic_28:require("./pic_28.png"),pic_29:require("./pic_29.png"),pic_3:require("./pic_3.png"),pic_30:require("./pic_30.png"),pic_31:require("./pic_31.png"),pic_32:require("./pic_32.png"),pic_33:require("./pic_33.png"),pic_4:require("./pic_4.png"),pic_5:require("./pic_5.png"),pic_6:require("./pic_6.png"),pic_7:require("./pic_7.png"),pic_9:require("./pic_9.png"),pic_8:require("./pic_8.png")};
+},{"./pic_1.png":"KFwa","./pic_10.png":"cYHH","./pic_12.png":"IGTa","./pic_11.png":"t0lH","./pic_13.png":"bLY4","./pic_14.png":"ECiu","./pic_15.png":"ycl/","./pic_16.png":"0Ldb","./pic_17.png":"KOQ1","./pic_18.png":"oK9m","./pic_19.png":"E/K5","./pic_2.png":"isi8","./pic_20.png":"PSzQ","./pic_21.png":"aJjM","./pic_22.png":"/FUm","./pic_23.png":"BPdS","./pic_24.png":"0bB/","./pic_25.png":"ueNg","./pic_26.png":"gLM9","./pic_27.png":"YGsF","./pic_28.png":"XCvW","./pic_29.png":"4DR7","./pic_3.png":"1cFB","./pic_30.png":"2nLg","./pic_31.png":"cE3a","./pic_32.png":"1nQT","./pic_33.png":"Afbz","./pic_4.png":"Ewc/","./pic_5.png":"Zr5t","./pic_6.png":"+FrO","./pic_7.png":"1o5j","./pic_9.png":"nMsV","./pic_8.png":"aUMV"}],"Jlc4":[function(require,module,exports) {
 module.exports="/alphabet/sound_1.bb195cee.wav";
 },{}],"i8qI":[function(require,module,exports) {
 module.exports="/alphabet/sound_10.f3ecf6be.wav";
