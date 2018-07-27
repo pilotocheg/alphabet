@@ -72,6 +72,7 @@ export default class Home extends React.Component {
       <div className="container">
         <div className="s_width">
           <header>
+            <div id="for_header">
             <h1>
               ВЕСЕ<span className="stroke">Л</span><br/>
               <span id="big-letter">A</span>
@@ -79,6 +80,10 @@ export default class Home extends React.Component {
                 <span className="stroke">Б</span>ЕТКА
               </span>
             </h1>
+            <p className="title_primary">
+              <span>І</span>нтерактивна <span>а</span>бетка <span>д</span>ля <span>д</span>ітей
+            </p>
+            </div>
             <div className="navigation">
               <Link to="/alphabet/learn">
                 <p className="nav_link" id="link-1" href=""><span>В</span>ЧИТИСЯ</p>
@@ -90,9 +95,6 @@ export default class Home extends React.Component {
                 <p className="nav_link" id="link-3" href=""><span>П</span>РО <span>Н</span>АС</p>
               </Link>
             </div>
-            <p className="title_primary">
-              <span>І</span>нтерактивна <span>а</span>бетка <span>д</span>ля <span>д</span>ітей
-            </p>
           </header>
           <div className="content">
             <div className="description">
