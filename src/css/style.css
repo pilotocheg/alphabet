@@ -84,6 +84,8 @@ body {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 #buttons-container {

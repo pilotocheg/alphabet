@@ -34,12 +34,21 @@ export class LetterBtn extends React.Component {
 
 export class MainLetter extends React.Component{
   letterAnimation() {
-    this.mainLetter.animate([
-      {transform: 'translate(-100%, 0)', opacity: '0'},
-      {transform: 'translate(-50%, -10%)', opacity: '0.5'},
-      { transform: 'translate(0, 0)', opacity: '1' },
-    ],{duration: 700})
+    const letter = this.mainLetter;
+    let x = 100, y = 0;
+    this.interval = setInterval(() => {
+      if (x <= 0) {
+        clearInterval(this.interval);
+        return;
+      }
+      (x > 50) ? y += 0.2 : y -= 0.2;
+      x -= 1;
+
+      letter.style.opacity = `${Math.round(x / 100) || 1}`;
+      letter.style.transform = `translate(-${x}%, -${y}%)`;
+    }, 7);
   }
+
   componentDidMount() {
     if(this.props.mode === 'game') {
       this.letterAnimation();
