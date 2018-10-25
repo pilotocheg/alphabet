@@ -35,17 +35,14 @@ export class LetterBtn extends React.Component {
 export class MainLetter extends React.Component{
   letterAnimation() {
     const letter = this.mainLetter;
-    let x = 100, y = 0;
+    let x = -100, y = 0;
     this.interval = setInterval(() => {
-      if (x <= 0) {
-        clearInterval(this.interval);
-        return;
-      }
-      (x > 50) ? y += 0.2 : y -= 0.2;
-      x -= 1;
+      if (x >= 0) return clearInterval(this.interval);
 
-      letter.style.opacity = `${Math.round(x / 100) || 1}`;
-      letter.style.transform = `translate(-${x}%, -${y}%)`;
+      y += (x < -50) ? -2 : 2;
+      x += 1;
+      letter.style.opacity = `${(100 + x) / 100}`;
+      letter.style.transform = `translate(${x}%, ${y / 10}%)`;
     }, 7);
   }
 
@@ -74,10 +71,13 @@ export class MainLetter extends React.Component{
 
 export class Pic extends React.Component{
   startAnimation() {
-    this.pic.animate([
-      { opacity: 0 },
-      { opacity: 1 }
-    ], { duration: 700 })
+    let x = 0;
+    this.interval = setInterval(() => {
+      if (x >= 1) return clearInterval(this.interval);
+
+      x += 0.01;
+      this.pic.style.opacity = `${x}`;
+    }, 7);
   }
 
   componentWillReceiveProps(props) {
@@ -98,10 +98,13 @@ export class Pic extends React.Component{
 export class Word extends React.Component{
 
   startAnimation() {
-    this.word.animate([
-      {opacity: 0},
-      {opacity: 1}
-    ], {duration: 700})
+    let x = 0;
+    this.interval = setInterval(() => {
+      if (x >= 1) return clearInterval(this.interval);
+
+      x += 0.01;
+      this.word.style.opacity = `${x}`;
+    }, 7);
   }
 
   componentDidMount() {

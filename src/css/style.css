@@ -138,6 +138,7 @@ body {
 #picture img {
   height: 125px;
   margin-bottom: 5px;
+  opacity: 0;
 }
 
 .word {
@@ -147,6 +148,7 @@ body {
 	margin: 0 0 10px 0;
 	color: #4a3faf;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
 }
 
 .word span {
