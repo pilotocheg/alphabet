@@ -4,10 +4,10 @@ import { StartDiv, RandomImage, StarImg } from './game-app-components';
 import mainData  from '../main_data';
 import images from '../../images/**.png';
 import starImg from '../../img/star.png';
-import sounds from '../../sounds/words/**.wav';
-import awesomeSounds from '../../sounds/awesome/**.wav';
-import ovationSound from '../../sounds/ovation.wav';
-import alertSound from '../../sounds/not_right.wav';
+import sounds from '../../sounds/words/**.mp3';
+import awesomeSounds from '../../sounds/awesome/**.mp3';
+import ovationSound from '../../sounds/ovation.mp3';
+import alertSound from '../../sounds/not_right.mp3';
 import ReactAudioPlayer from 'react-audio-player';
 
 export default class GameApp extends React.Component {
