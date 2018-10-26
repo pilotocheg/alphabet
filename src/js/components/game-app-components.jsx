@@ -3,12 +3,19 @@ import smilePic from '../../img/smile-pic.png';
 import starPic from '../../img/star.png';
 
 export class StartDiv extends React.Component {
+  onInitAnimation() {
+    const mWindow = this.messageWindow;
+    let x = 0;
+    this.interval = setInterval(() => {
+      if (x >= 40) return clearInterval(this.interval);
+
+      x += 0.5;
+      mWindow.style.transform = `translateY(${x}%)`;
+    }, 5);
+  }
 
   componentDidMount() {
-    this.messageWindow.animate([
-      {transform: 'translateY(0)'},
-      {transform: 'translateY(40%)'}
-    ], {duration: 400})
+    this.onInitAnimation();
   }
   render() {
     return (
@@ -72,17 +79,26 @@ export class RandomImage extends React.Component {
     }
   }
 
+  startAnimation() {
+    const pic = this.pic;
+    pic.style.opacity = 0;
+    let x = 0;
+    this.interval = setInterval(() => {
+      if (x >= 1) return clearInterval(this.interval);
+
+      x += 0.01;
+      pic.style.opacity = x;
+    }, 6);
+  }
+
   componentDidMount(){
-    this.image.animate([
-      {opacity: '0'},
-      {opacity: '1'}
-    ], {duration: 600})
+    this.startAnimation();
   }
 
   render () {
     return (
       <img
-        ref={e => this.image = e}
+        ref={e => this.pic = e}
         src={this.props.src}
         onClick={this.handleClick.bind(this)}
         onMouseLeave={e => {
@@ -103,12 +119,17 @@ export class StarImg extends React.Component {
     }
   }
   elemAnimation() {
-    this.starPic.animate([
-      { transform: 'scale(1)' },
-      { transform: 'scale(1.3)' },
-      { transform: 'scale(1)' }
-    ], {duration: 700})
-    this.setState({animDone: true});
+    const pic = this.starPic;
+    let x = 1, duration = 0;
+    this.interval = setInterval(() => {
+      if (duration >= 60) {
+        clearInterval(this.interval);
+        return this.setState({animDone: true});
+      }
+      duration += 1;
+      x += (duration <= 30) ? 0.01 : -0.01;
+      pic.style.transform = `scale(${x})`;
+    }, 10);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -116,11 +137,7 @@ export class StarImg extends React.Component {
       this.setState({
         opacity: 1,
       }, () => {
-        try {
-          if (!this.state.animDone) this.elemAnimation();
-        } catch (err) {
-          console.log(err);
-        }
+        if (!this.state.animDone) this.elemAnimation();
       })
     }
     if (!nextProps.counter) this.setState({opacity: 0});

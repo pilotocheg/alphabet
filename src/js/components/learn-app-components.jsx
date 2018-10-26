@@ -35,13 +35,14 @@ export class LetterBtn extends React.Component {
 export class MainLetter extends React.Component{
   letterAnimation() {
     const letter = this.mainLetter;
+    letter.style.opacity = 0;
     let x = -100, y = 0;
     this.interval = setInterval(() => {
       if (x >= 0) return clearInterval(this.interval);
 
       y += (x < -50) ? -2 : 2;
       x += 1;
-      letter.style.opacity = `${(100 + x) / 100}`;
+      letter.style.opacity = (100 + x) / 100;
       letter.style.transform = `translate(${x}%, ${y / 10}%)`;
     }, 7);
   }
@@ -71,12 +72,14 @@ export class MainLetter extends React.Component{
 
 export class Pic extends React.Component{
   startAnimation() {
+    const pic = this.pic;
+    pic.style.opacity = 0;
     let x = 0;
     this.interval = setInterval(() => {
       if (x >= 1) return clearInterval(this.interval);
 
       x += 0.01;
-      this.pic.style.opacity = `${x}`;
+      pic.style.opacity = x;
     }, 7);
   }
 
@@ -98,12 +101,14 @@ export class Pic extends React.Component{
 export class Word extends React.Component{
 
   startAnimation() {
+    const word = this.word;
+    word.style.opacity = 0;
     let x = 0;
     this.interval = setInterval(() => {
       if (x >= 1) return clearInterval(this.interval);
 
       x += 0.01;
-      this.word.style.opacity = `${x}`;
+      word.style.opacity = x;
     }, 7);
   }
 
