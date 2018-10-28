@@ -3,19 +3,23 @@ import smilePic from '../../img/smile-pic.png';
 import starPic from '../../img/star.png';
 
 export class StartDiv extends React.Component {
-  onInitAnimation() {
+  onInitAnimation(duration) {
     const mWindow = this.messageWindow;
-    let x = 0;
-    this.interval = setInterval(() => {
-      if (x >= 40) return clearInterval(this.interval);
-
-      x += 0.5;
-      mWindow.style.transform = `translateY(${x}%)`;
-    }, 5);
+    const start = performance.now();
+    const frame = (timestamp) => {
+      const progress = timestamp - start;
+      const diff = duration / 400;
+      const y = progress > 0 ? (progress / diff) / 10 : 0;
+      mWindow.style.transform = `translateY(${Math.min(y, 40)}%)`;
+      if (progress <= duration) {
+        requestAnimationFrame(frame);
+      }
+    }
+    requestAnimationFrame(frame);
   }
 
   componentDidMount() {
-    this.onInitAnimation();
+    this.onInitAnimation(500);
   }
   render() {
     return (
@@ -118,18 +122,20 @@ export class StarImg extends React.Component {
       opacity: 0,
     }
   }
-  elemAnimation() {
+  elemAnimation(duration) {
     const pic = this.starPic;
-    let x = 1, duration = 0;
-    this.interval = setInterval(() => {
-      if (duration >= 60) {
-        clearInterval(this.interval);
-        return this.setState({animDone: true});
+    const start = performance.now();
+    const frame = (timestamp) => {
+      const progress = timestamp - start;
+      const x = (progress <= duration / 2) ? progress : duration - progress;
+      pic.style.transform = `scale(${Math.max(1 + x / 1000, 1)})`;
+      if (progress <= duration) {
+        requestAnimationFrame(frame);
+      } else {
+        this.setState({ animDone: true });
       }
-      duration += 1;
-      x += (duration <= 30) ? 0.01 : -0.01;
-      pic.style.transform = `scale(${x})`;
-    }, 10);
+    }
+    requestAnimationFrame(frame);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -137,7 +143,7 @@ export class StarImg extends React.Component {
       this.setState({
         opacity: 1,
       }, () => {
-        if (!this.state.animDone) this.elemAnimation();
+        if (!this.state.animDone) this.elemAnimation(700);
       })
     }
     if (!nextProps.counter) this.setState({opacity: 0});
