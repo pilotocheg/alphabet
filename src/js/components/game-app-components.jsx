@@ -5,12 +5,17 @@ import starPic from '../../img/star.png';
 export class StartDiv extends React.Component {
   onInitAnimation(duration) {
     const mWindow = this.messageWindow;
+    const elHeight = mWindow.offsetHeight;
+    const parElHeight = mWindow.parentElement.offsetHeight;
+    const animLength = ((parElHeight - elHeight) / 2 / elHeight).toFixed(1) * 100;
+    console.log(animLength);
     const start = performance.now();
+
     const frame = (timestamp) => {
       const progress = timestamp - start;
-      const diff = duration / 400;
+      const diff = duration / (animLength * 10);
       const y = progress > 0 ? (progress / diff) / 10 : 0;
-      mWindow.style.transform = `translateY(${Math.min(y, 40)}%)`;
+      mWindow.style.transform = `translateY(${Math.min(y, animLength)}%)`;
       if (progress <= duration) {
         requestAnimationFrame(frame);
       }
@@ -19,6 +24,8 @@ export class StartDiv extends React.Component {
   }
 
   componentDidMount() {
+    console.log(this.messageWindow.offsetHeight);
+    console.log(this.messageWindow.parentElement.offsetHeight);
     this.onInitAnimation(500);
   }
   render() {

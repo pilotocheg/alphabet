@@ -81,7 +81,7 @@ export class Pic extends React.Component{
     const frame = (timestamp) => {
       const progress = timestamp - start;
       pic.style.opacity = Math.min(progress / duration, 1);
-      if (progress <= duration) {
+      if (progress < duration) {
         requestAnimationFrame(frame);
       }
     }
