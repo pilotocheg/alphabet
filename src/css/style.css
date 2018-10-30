@@ -84,6 +84,8 @@ body {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
+  opacity: 0;
+  transform: translateX(-100%);
 }
 
 #buttons-container {
@@ -136,6 +138,7 @@ body {
 #picture img {
   height: 125px;
   margin-bottom: 5px;
+  opacity: 0;
 }
 
 .word {
@@ -145,6 +148,7 @@ body {
 	margin: 0 0 10px 0;
 	color: #4a3faf;
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
 }
 
 .word span {
@@ -194,14 +198,16 @@ body {
   margin: 0 auto;
 }
 #start-div {
-  max-width: 350px;
-  margin: 0 auto;
+  width: 350px;
+  /* margin: 0 auto; */
   background-color: #ffffffc2;
   border: 3px solid #F9911A;
   padding: 5px 15px 10px;
   border-radius: 10px;
-  transform: translateY(40%);
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 3;
 }
 
@@ -426,7 +432,7 @@ body {
     margin: 10px;
   }
   #start-div {
-    max-width: 450px;
+    width: 450px;
     padding: 5px 30px 15px;
   }
   #start-div-header {

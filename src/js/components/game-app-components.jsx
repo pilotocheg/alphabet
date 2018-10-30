@@ -3,12 +3,28 @@ import smilePic from '../../img/smile-pic.png';
 import starPic from '../../img/star.png';
 
 export class StartDiv extends React.Component {
+  onInitAnimation(duration) {
+    const mWindow = this.messageWindow;
+    mWindow.style.top = 0;
+    const elHeight = mWindow.offsetHeight;
+    const parElHeight = mWindow.parentElement.offsetHeight;
+    const animLength = ((parElHeight - elHeight) / 2 / parElHeight).toFixed(2);
+    const start = performance.now();
+
+    const frame = (timestamp) => {
+      const progress = timestamp - start;
+      const diff = duration / (animLength * 10);
+      const y = progress > 0 ? (progress / diff) * 10 : 0;
+      mWindow.style.top = `${y.toFixed(0)}%`;
+      if (progress <= duration) {
+        requestAnimationFrame(frame);
+      }
+    }
+    requestAnimationFrame(frame);
+  }
 
   componentDidMount() {
-    this.messageWindow.animate([
-      {transform: 'translateY(0)'},
-      {transform: 'translateY(40%)'}
-    ], {duration: 400})
+    this.onInitAnimation(400);
   }
   render() {
     return (
@@ -72,17 +88,26 @@ export class RandomImage extends React.Component {
     }
   }
 
+  startAnimation() {
+    const pic = this.pic;
+    pic.style.opacity = 0;
+    let x = 0;
+    this.interval = setInterval(() => {
+      if (x >= 1) return clearInterval(this.interval);
+
+      x += 0.01;
+      pic.style.opacity = x;
+    }, 6);
+  }
+
   componentDidMount(){
-    this.image.animate([
-      {opacity: '0'},
-      {opacity: '1'}
-    ], {duration: 600})
+    this.startAnimation();
   }
 
   render () {
     return (
       <img
-        ref={e => this.image = e}
+        ref={e => this.pic = e}
         src={this.props.src}
         onClick={this.handleClick.bind(this)}
         onMouseLeave={e => {
@@ -102,13 +127,20 @@ export class StarImg extends React.Component {
       opacity: 0,
     }
   }
-  elemAnimation() {
-    this.starPic.animate([
-      { transform: 'scale(1)' },
-      { transform: 'scale(1.3)' },
-      { transform: 'scale(1)' }
-    ], {duration: 700})
-    this.setState({animDone: true});
+  elemAnimation(duration) {
+    const pic = this.starPic;
+    const start = performance.now();
+    const frame = (timestamp) => {
+      const progress = timestamp - start;
+      const x = (progress <= duration / 2) ? progress : duration - progress;
+      pic.style.transform = `scale(${Math.max(1 + x / 1000, 1)})`;
+      if (progress <= duration) {
+        requestAnimationFrame(frame);
+      } else {
+        this.setState({ animDone: true });
+      }
+    }
+    requestAnimationFrame(frame);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -116,11 +148,7 @@ export class StarImg extends React.Component {
       this.setState({
         opacity: 1,
       }, () => {
-        try {
-          if (!this.state.animDone) this.elemAnimation();
-        } catch (err) {
-          console.log(err);
-        }
+        if (!this.state.animDone) this.elemAnimation(700);
       })
     }
     if (!nextProps.counter) this.setState({opacity: 0});

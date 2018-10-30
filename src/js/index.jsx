@@ -14,25 +14,17 @@ class MainDiv extends React.Component {
 
     this.state = {
       mute: false,
-      isLandscape: window.screen.width > window.screen.height
+      isLandscape: window.innerWidth > window.innerHeight,
     };
     // console.log(this.state.isLandscape)
     this.callback = this.orientationCallback.bind(this);
   }
 
   orientationCallback() {
-    let isTrue = window.screen.width > window.screen.height;
-    if (isTrue && this.state.isLandscape !== isTrue) {
+    let isTrue = window.innerWidth > window.innerHeight;
+    if (this.state.isLandscape !== isTrue) {
       this.setState({
         isLandscape: isTrue
-      }, () => {
-        // console.log(this.state.isLandscape)
-      });
-    } else if (!isTrue && this.state.isLandscape !== isTrue ) {
-      this.setState({
-        isLandscape: isTrue
-      }, () => {
-        // console.log(this.state.isLandscape)
       });
     }
   }

@@ -33,22 +33,32 @@ export class LetterBtn extends React.Component {
 }
 
 export class MainLetter extends React.Component{
-  letterAnimation() {
-    this.mainLetter.animate([
-      {transform: 'translate(-100%, 0)', opacity: '0'},
-      {transform: 'translate(-50%, -10%)', opacity: '0.5'},
-      { transform: 'translate(0, 0)', opacity: '1' },
-    ],{duration: 700})
+  letterAnimation(duration) {
+    const letter = this.mainLetter;
+    letter.style.opacity = 0;
+    let x = -100, y = 0;
+    const start = performance.now();
+    const frame = (timestamp) => {
+      const progress = timestamp - start;
+      y += (progress <= duration / 2) ? -progress : progress - duration / 2;
+      letter.style.opacity = Math.min(progress / duration, 1);
+      letter.style.transform = `translate(${Math.min(x + progress / (duration / 100), 0)}%, ${Math.min(y / 350, 0)}%)`;
+      if (progress <= duration) {
+        requestAnimationFrame(frame);
+      }
+    }
+    requestAnimationFrame(frame);
   }
+
   componentDidMount() {
     if(this.props.mode === 'game') {
-      this.letterAnimation();
+      this.letterAnimation(700);
     }
   }
 
   componentWillReceiveProps(props) {
     if(props.mode !== 'learn' || props.renderPic || this.props.handleSound !== props.handleSound) return;
-    this.letterAnimation();
+    this.letterAnimation(700);
   }
   render() {
     return (
@@ -64,16 +74,23 @@ export class MainLetter extends React.Component{
 }
 
 export class Pic extends React.Component{
-  startAnimation() {
-    this.pic.animate([
-      { opacity: 0 },
-      { opacity: 1 }
-    ], { duration: 700 })
+  startAnimation(duration) {
+    const pic = this.pic;
+    pic.style.opacity = 0;
+    const start = performance.now();
+    const frame = (timestamp) => {
+      const progress = timestamp - start;
+      pic.style.opacity = Math.min(progress / duration, 1);
+      if (progress < duration) {
+        requestAnimationFrame(frame);
+      }
+    }
+    requestAnimationFrame(frame);
   }
 
   componentWillReceiveProps(props) {
     if (this.props.handleSound !== props.handleSound) return;
-    this.startAnimation();
+    this.startAnimation(700);
   }
 
   render() {
@@ -88,22 +105,29 @@ export class Pic extends React.Component{
 
 export class Word extends React.Component{
 
-  startAnimation() {
-    this.word.animate([
-      {opacity: 0},
-      {opacity: 1}
-    ], {duration: 700})
+  startAnimation(duration) {
+    const word = this.word;
+    word.style.opacity = 0;
+    const start = performance.now();
+    const frame = (timestamp) => {
+      const progress = timestamp - start;
+      word.style.opacity = Math.min(progress / duration, 1);
+      if (progress <= duration) {
+        requestAnimationFrame(frame);
+      }
+    }
+    requestAnimationFrame(frame);
   }
 
   componentDidMount() {
     if(this.props.mode === 'game') {
-      this.startAnimation();
+      this.startAnimation(700);
     }
   }
 
   componentWillReceiveProps(props) {
     if(this.props.mode !== 'learn' || this.props.handleSound !== props.handleSound) return;
-    this.startAnimation();
+    this.startAnimation(700);
   }
   render() {
     return (

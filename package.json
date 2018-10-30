@@ -1,11 +1,11 @@
 {
   "name": "funny_alphabet",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "interactive alphabet app",
   "scripts": {
     "build": "rm -rf dist && parcel build src/index.html --public-url /alphabet && cp ./dist/index.html ./dist/404.html",
     "start": "rm -rf dist .cache && parcel src/index.html -p 3000",
-    "publish": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "play",
@@ -33,14 +33,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "react": "^16.4.1",
+    "react": "^16.6.0",
     "react-audio-player": "^0.10.0",
-    "react-dom": "^16.4.1",
+    "react-dom": "^16.6.0",
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",
-    "parcel-bundler": "^1.9.7",
-    "parcel-plugin-sw-precache": "^0.5.2"
+    "parcel-bundler": "^1.10.3",
+    "parcel-plugin-sw-precache": "^1.0.2"
   }
 }

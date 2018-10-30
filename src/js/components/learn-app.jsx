@@ -2,8 +2,8 @@ import React from 'react';
 import { LetterBtn, MainLetter, Pic, Word } from './learn-app-components';
 import mainData  from '../main_data';
 import images from '../../images/**.png';
-import sounds from '../../sounds/words/**.wav';
-import main_word from '../../sounds/main_word.wav';
+import sounds from '../../sounds/words/**.mp3';
+import main_word from '../../sounds/main_word.mp3';
 import ReactAudioPlayer from 'react-audio-player';
 
 export default class LearnApp extends React.Component {
