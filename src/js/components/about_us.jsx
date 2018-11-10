@@ -38,7 +38,7 @@ export default function AboutUs() {
           <h2 id="about-title"><span>П</span>ро <span>н</span>ас:</h2>
           <p className="text">
             Дана програма створена для кращого засвоєння абетки за допомогою гри,
-            випускниками "A-Level Poltava" курсу "Front-End".
+            випускниками A-Level Poltava курсу Front-End.
             У проекті були використані такі технології: HTML5, CSS3, JavaScript, React.
             В програмі є навчальний та ігровий режими.
             Всі картинки взяті з інтернету, звуки записані власноруч.
