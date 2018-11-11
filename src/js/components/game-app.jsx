@@ -1,18 +1,28 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import ReactAudioPlayer from 'react-audio-player';
 import { MainLetter, Word } from './learn-app-components';
-import { StartDiv, RandomImage, StarImg } from './game-app-components';
-import mainData  from '../main_data';
+import StartMessageWindow from './start_message_window';
+import StarImg from './star_img';
+import RandomImage from './random_image';
+import mainData from '../main_data';
 import images from '../../images/**.png';
 import starImg from '../../img/star.png';
 import sounds from '../../sounds/words/**.mp3';
 import awesomeSounds from '../../sounds/awesome/**.mp3';
 import ovationSound from '../../sounds/ovation.mp3';
 import alertSound from '../../sounds/not_right.mp3';
-import ReactAudioPlayer from 'react-audio-player';
 
 export default class GameApp extends React.Component {
-  constructor() {
-    super();
+  static propTypes = {
+    mute: PropTypes.bool, // Is app in sound or muted mode
+  }
+
+  static defaultProps = {
+    mute: false,
+  }
+
+  constructor(props) {
+    super(props);
 
     this.state = {
       start: false,
@@ -20,34 +30,40 @@ export default class GameApp extends React.Component {
       letter: '',
       counter: 0,
       starsArr: [starImg, starImg, starImg],
-      awesomeSoundNumber: Math.floor(Math.random() * 4) + 1
+      awesomeSoundNumber: Math.floor(Math.random() * 4) + 1,
+    };
+  };
+
+  onGameStart() {
+    const letterNum = Math.floor(Math.random() * 33);
+    const numbersArr = [letterNum];
+    for (let i = 0; i < 2; i += 1) {
+      const randomDigit = Math.floor(Math.random() * 33);
+      if (numbersArr[i] !== randomDigit && randomDigit !== letterNum) {
+        numbersArr.push(randomDigit);
+      } else {
+        i -= 1;
+      }
     }
+    const letter = mainData[letterNum].letter;
+    const word = mainData[letterNum].word;
+
+    this.setState({
+      letter,
+      word: word.replace(letter, `<span>${letter}</span>`),
+      sound: sounds[`sound_${letterNum + 1}`],
+      sound2: sounds[`sound_${letterNum + 1}_w`],
+      letterNum,
+      numbersArr: numbersArr.sort((a, b) => a - b),
+    });
   }
 
   handleStart() {
     if (this.state.counter === 3) {
-      this.setState({counter: 0, hideStars: false});
+      this.setState({ counter: 0, hideStars: false });
     }
     this.setState({ start: true });
     this.onGameStart();
-  }
-
-  isTrueCallback(value) {
-    this.setState({ isTrue: value }, () => {
-      if (this.state.isTrue) {
-        this.setState({
-          counter: this.state.counter += 1,
-        }, () => {
-          try {
-            this.awesomeSound.audioEl.play();
-          } catch (err) {
-            console.log(err);
-          }
-        })
-      } else {
-        this.alertSound.audioEl.play();
-      }
-    });
   }
 
   handleNextGame() {
@@ -57,33 +73,24 @@ export default class GameApp extends React.Component {
         isTrue: false,
         hideStars: this.state.counter === 3,
         awesomeSoundNumber: Math.floor(Math.random() * 4) + 1
-      })
+      });
+
       if (this.state.counter === 3) {
-      this.ovationSound.audioEl.play();
+        this.ovationSound.audioEl.play();
       }
-    }, 500)
+    }, 500);
   }
-  onGameStart() {
-    let letterNum = Math.floor(Math.random()* 33);
-    let numbersArr = [letterNum];
-    for (let i = 0; i < 2; i += 1) {
-      let randomDigit = Math.floor(Math.random()* 33);
-      if (numbersArr[i] !== randomDigit && randomDigit !== letterNum) {
-        numbersArr.push(randomDigit);
+
+  isTrueCallback(value) {
+    this.setState({ isTrue: value }, () => {
+      if (this.state.isTrue) {
+        this.setState({
+          counter: this.state.counter += 1,
+        }, this.awesomeSound.audioEl.play);
       } else {
-        i -= 1;
+        this.alertSound.audioEl.play();
       }
-    }
-    const letter = mainData[letterNum].letter;
-    const word = mainData[letterNum].word;
-    this.setState({
-      letter: letter,
-      word: word.replace(letter, `<span>${letter}</span>`),
-      sound: sounds['sound_' + (letterNum + 1)],
-      sound2: sounds['sound_' + (letterNum + 1) + '_w'],
-      letterNum: letterNum,
-      numbersArr: numbersArr.sort((a, b) => a - b)
-    })
+    });
   }
 
   playLetterSound() {
@@ -98,15 +105,16 @@ export default class GameApp extends React.Component {
     return (
       <div className="main-container for-game">
         {
-          !this.state.start
-          ? <StartDiv
+          !this.state.start ?
+            <StartMessageWindow
               handleStart={this.handleStart.bind(this)}
               counter={this.state.counter}
             />
-          : <div>
+            :
+            <div>
               <div id="game-letter-container">
-                <MainLetter id="game-letter" mode="game" bigLetter={ this.state.letter }/>
-                { !this.state.isTrue || <Word id="game-word" mode="game" word={this.state.word}/> }
+                <MainLetter id="game-letter" mode="game" bigLetter={this.state.letter} />
+                { !this.state.isTrue || <Word id="game-word" mode="game" word={this.state.word} /> }
               </div>
               <div id="pics-container">
                 {
@@ -114,7 +122,7 @@ export default class GameApp extends React.Component {
                     <RandomImage
                       isTrue={this.state.isTrue}
                       key={item}
-                      src={images['pic_' + (item + 1)]}
+                      src={images[`pic_${item + 1}`]}
                       letterNum={item}
                       trueNum={this.state.letterNum}
                       isTrueCallback={this.isTrueCallback.bind(this)}
@@ -131,7 +139,7 @@ export default class GameApp extends React.Component {
             this.state.starsArr.map((img, i) => (
               <StarImg
                 src={img}
-                key={i}
+                key={Math.random()}
                 ownNumber={(i + 1)}
                 counter={this.state.counter}
               />
@@ -139,31 +147,31 @@ export default class GameApp extends React.Component {
           }
         </div>
         <ReactAudioPlayer
-          src={awesomeSounds['awesome_' + this.state.awesomeSoundNumber]}
-          ref={elem => this.awesomeSound = elem}
+          src={awesomeSounds[`awesome_${this.state.awesomeSoundNumber}`]}
+          ref={(el) => { this.awesomeSound = el; }}
           onEnded={this.playLetterSound.bind(this)}
           muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={this.state.sound}
-          ref={elem => this.letterSound = elem}
+          ref={(el) => { this.letterSound = el; }}
           onEnded={this.playWordSound.bind(this)}
           muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={this.state.sound2}
-          ref={elem => this.wordSound = elem}
+          ref={(el) => { this.wordSound = el; }}
           onEnded={this.handleNextGame.bind(this)}
           muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={ovationSound}
-          ref={elem => this.ovationSound = elem}
+          ref={(el) => { this.ovationSound = el; }}
           muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={alertSound}
-          ref={elem => this.alertSound = elem}
+          ref={(el) => { this.alertSound = el; }}
           muted={this.props.mute}
         />
       </div>
