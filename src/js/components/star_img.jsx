@@ -43,7 +43,7 @@ export default class StarImg extends React.Component {
       } else {
         this.setState({ animDone: true });
       }
-    }
+    };
     requestAnimationFrame(frame);
   }
 

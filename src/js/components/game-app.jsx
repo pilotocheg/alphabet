@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
-import { MainLetter, Word } from './learn-app-components';
+import Word from './word';
+import MainLetter from './main_letter';
 import StartMessageWindow from './start_message_window';
 import StarImg from './star_img';
 import RandomImage from './random_image';
@@ -32,7 +33,7 @@ export default class GameApp extends React.Component {
       starsArr: [starImg, starImg, starImg],
       awesomeSoundNumber: Math.floor(Math.random() * 4) + 1,
     };
-  };
+  }
 
   onGameStart() {
     const letterNum = Math.floor(Math.random() * 33);
@@ -72,7 +73,7 @@ export default class GameApp extends React.Component {
         start: false,
         isTrue: false,
         hideStars: this.state.counter === 3,
-        awesomeSoundNumber: Math.floor(Math.random() * 4) + 1
+        awesomeSoundNumber: Math.floor(Math.random() * 4) + 1,
       });
 
       if (this.state.counter === 3) {
@@ -175,6 +176,6 @@ export default class GameApp extends React.Component {
           muted={this.props.mute}
         />
       </div>
-    )
+    );
   }
 }

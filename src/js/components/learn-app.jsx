@@ -1,28 +1,25 @@
-import React from 'react';
-import { LetterBtn, MainLetter, Pic, Word } from './learn-app-components';
-import mainData  from '../main_data';
+import ReactAudioPlayer from 'react-audio-player';
+import React, { PropTypes } from 'react';
+import Word from './word';
+import Pic from './learn_pic';
+import MainLetter from './main_letter';
+import LetterBtn from './letter_btn';
+import mainData from '../main_data';
 import images from '../../images/**.png';
 import sounds from '../../sounds/words/**.mp3';
-import main_word from '../../sounds/main_word.mp3';
-import ReactAudioPlayer from 'react-audio-player';
+import mainWord from '../../sounds/main_word.mp3';
 
 export default class LearnApp extends React.Component {
-  constructor() {
-    super();
-    this.state = {}
+  static propTypes = {
+    mute: PropTypes.bool,
   }
 
-  getValues(letter, picName, word, soundName) {
-    if (this.state.renderPic) this.state.renderPic = false;
-    this.mainSound.audioEl.play();
-    const colorWord = word.replace(letter, `<span>${letter}</span>`)
-    this.setState({
-      letter: letter,
-      picName: images[picName],
-      word: colorWord,
-      sound: sounds[soundName],
-      sound2: sounds[soundName + '_w']
-    })
+  static defaultProps = {
+    mute: false,
+  }
+  constructor() {
+    super();
+    this.state = {};
   }
 
   onPlayLetterSound() {
@@ -31,63 +28,76 @@ export default class LearnApp extends React.Component {
 
   onPlayWordSound() {
     this.setState({
-      renderPic: true
-    })
+      renderPic: true,
+    });
     this.wordSound.audioEl.play();
   }
 
+  getValues(letter, picName, word, soundName) {
+    if (this.state.renderPic) this.state.renderPic = false;
+    this.mainSound.audioEl.play();
+    const colorWord = word.replace(letter, `<span>${letter}</span>`);
+    this.setState({
+      letter,
+      picName: images[picName],
+      word: colorWord,
+      sound: sounds[soundName],
+      sound2: sounds[`${soundName}_w`],
+    });
+  }
+
   render() {
-    return(
+    return (
       <div className="main-container">
         <MainLetter
           id="learn-letter"
           mode="learn"
-          bigLetter={ this.state.letter }
+          bigLetter={this.state.letter}
           renderPic={this.state.renderPic}
           handleSound={this.props.mute}
         />
         <div id="picture">
           <Pic
-            src={ this.state.renderPic ? this.state.picName : "" }
+            src={this.state.renderPic ? this.state.picName : ''}
             handleSound={this.props.mute}
           />
           <Word
             id="learn-word"
             mode="learn"
-            word={ this.state.renderPic ? this.state.word : "" }
+            word={this.state.renderPic ? this.state.word : ''}
             handleSound={this.props.mute}
           />
         </div>
         <div id="buttons-container">
-          { mainData.map((el) => {
-            return <LetterBtn
-              key={ el.letter }
-              letter={ el.letter }
+          { mainData.map(el => (
+            <LetterBtn
+              key={el.letter}
+              letter={el.letter}
               picName={el.pic}
               word={el.word}
               sound={el.sound}
-              getValues={ this.getValues.bind(this) }
-            />
-          }) }
+              getValues={this.getValues.bind(this)}
+            />))
+          }
         </div>
         <ReactAudioPlayer
-          src={main_word}
-          ref={elem => this.mainSound = elem}
+          src={mainWord}
+          ref={(elem) => { this.mainSound = elem; }}
           onEnded={this.onPlayLetterSound.bind(this)}
           muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={this.state.sound}
-          ref={elem => this.letterSound = elem}
+          ref={(elem) => { this.letterSound = elem; }}
           onEnded={this.onPlayWordSound.bind(this)}
           muted={this.props.mute}
         />
         <ReactAudioPlayer
           src={this.state.sound2}
-          ref={elem => this.wordSound = elem}
+          ref={(elem) => { this.wordSound = elem; }}
           muted={this.props.mute}
         />
       </div>
-    )
+    );
   }
 }

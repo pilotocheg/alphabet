@@ -22,7 +22,7 @@ export default class ControlBtns extends React.Component {
       muted: !this.state.muted,
     }, () => {
       this.props.isMutedCallback(this.state.muted);
-    })
+    });
   }
 
   handleMusic() {
@@ -52,7 +52,7 @@ export default class ControlBtns extends React.Component {
         </Link>
         <button
           style={{ color: this.state.muted ? '#d12a7b' : '#fff' }}
-          onClick={ this.handleSound.bind(this) }
+          onClick={this.handleSound.bind(this)}
           id="sound"
         >
           {
