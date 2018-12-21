@@ -1,22 +1,9 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class RandomImage extends React.Component {
-  static propTypes = {
-    letterNum: PropTypes.number.isRequired,
-    trueNum: PropTypes.number.isRequired,
-    isTrue: PropTypes.bool.isRequired,
-    isTrueCallback: PropTypes.func.isRequired,
-    src: PropTypes.string.isRequired,
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-
+export default class RandomImage extends Component {
   componentDidMount() {
     this.startAnimation(700);
   }
@@ -64,3 +51,11 @@ export default class RandomImage extends React.Component {
     );
   }
 }
+
+RandomImage.propTypes = {
+  letterNum: PropTypes.number.isRequired,
+  trueNum: PropTypes.number.isRequired,
+  isTrue: PropTypes.bool.isRequired,
+  isTrueCallback: PropTypes.func.isRequired,
+  src: PropTypes.string.isRequired,
+};

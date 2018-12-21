@@ -1,13 +1,10 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
 import ReactAudioPlayer from 'react-audio-player';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import soundTrack from '../../sounds/music-track.mp3';
 
-export default class ControlBtns extends React.Component {
-  static propTypes = {
-    isMutedCallback: PropTypes.func.isRequired,
-  }
-
+export default class ControlBtns extends Component {
   constructor() {
     super();
 
@@ -27,9 +24,13 @@ export default class ControlBtns extends React.Component {
 
   handleMusic() {
     if (this.state.muted) return;
+
     this.setState({
       music: !this.state.music,
-    }, this.state.music ? this.rap.audioEl.play() : this.rap.audioEl.pause());
+    }, () => (this.state.music
+      ? this.rap.audioEl.play()
+      : this.rap.audioEl.pause()
+    ));
   }
 
   render() {
@@ -79,3 +80,7 @@ export default class ControlBtns extends React.Component {
     );
   }
 }
+
+ControlBtns.propTypes = {
+  isMutedCallback: PropTypes.func.isRequired,
+};

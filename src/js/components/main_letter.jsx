@@ -1,19 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class MainLetter extends Component {
-  static propTypes = {
-    mode: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    bigLetter: PropTypes.string.isRequired,
-    renderPic: PropTypes.bool,
-    handleSound: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    renderPic: false,
-    handleSound: false,
-  }
-
   componentDidMount() {
     if (this.props.mode === 'game') {
       this.letterAnimation(700);
@@ -59,3 +47,16 @@ export default class MainLetter extends Component {
     );
   }
 }
+
+MainLetter.propTypes = {
+  mode: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  bigLetter: PropTypes.string.isRequired,
+  renderPic: PropTypes.bool,
+  handleSound: PropTypes.bool,
+};
+
+MainLetter.defaultProps = {
+  renderPic: false,
+  handleSound: false,
+};

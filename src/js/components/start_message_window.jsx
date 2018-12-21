@@ -1,18 +1,9 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import smilePic from '../../img/smile-pic.png';
 import starPic from '../../img/star.png';
 
-export default class StartMessageWindow extends React.Component {
-  static propTypes = {
-    counter: PropTypes.number,
-    handleStart: PropTypes.func,
-  }
-
-  static defaultProps = {
-    counter: 0,
-    handleStart: () => {},
-  }
-
+export default class StartMessageWindow extends Component {
   componentDidMount() {
     this.onInitAnimation(400);
   }
@@ -78,3 +69,13 @@ export default class StartMessageWindow extends React.Component {
     );
   }
 }
+
+StartMessageWindow.propTypes = {
+  counter: PropTypes.number,
+  handleStart: PropTypes.func,
+};
+
+StartMessageWindow.defaultProps = {
+  counter: 0,
+  handleStart: () => {},
+};

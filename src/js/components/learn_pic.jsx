@@ -1,14 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Pic extends Component {
-  static propTypes = {
-    handleSound: PropTypes.bool,
-    src: PropTypes.string.isRequired,
-  }
-
-  static defaultProps = {
-    handleSound: false,
-  }
   componentWillReceiveProps({ handleSound }) {
     if (this.props.handleSound !== handleSound) return;
     this.startAnimation(700);
@@ -39,3 +32,12 @@ export default class Pic extends Component {
     );
   }
 }
+
+Pic.propTypes = {
+  handleSound: PropTypes.bool,
+  src: PropTypes.string.isRequired,
+};
+
+Pic.defaultProps = {
+  handleSound: false,
+};

@@ -1,5 +1,6 @@
 import ReactAudioPlayer from 'react-audio-player';
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Word from './word';
 import Pic from './learn_pic';
 import MainLetter from './main_letter';
@@ -9,19 +10,14 @@ import images from '../../images/**.png';
 import sounds from '../../sounds/words/**.mp3';
 import mainWord from '../../sounds/main_word.mp3';
 
-export default class LearnApp extends React.Component {
-  static propTypes = {
-    mute: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    mute: false,
-  }
+export default class LearnApp extends Component {
   constructor() {
     super();
-    this.state = {};
-  }
 
+    this.state = {
+      letter: '',
+    };
+  }
   onPlayLetterSound() {
     this.letterSound.audioEl.play();
   }
@@ -101,3 +97,11 @@ export default class LearnApp extends React.Component {
     );
   }
 }
+
+LearnApp.propTypes = {
+  mute: PropTypes.bool,
+};
+
+LearnApp.defaultProps = {
+  mute: false,
+};

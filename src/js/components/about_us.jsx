@@ -45,7 +45,7 @@ export default function AboutUs() {
           </p>
         </div>
         <div id="members-container">
-          {/* <h2 id="team-title"><span>Н</span>аша <span>к</span>оманда:</h2> */}
+          <h2 id="team-title"><span>Н</span>аша <span>к</span>оманда:</h2>
           <div className="team-member">
             <img src={memberPics.slavik} alt="" />
             <h3>Дмитрієв Вячеслав</h3>

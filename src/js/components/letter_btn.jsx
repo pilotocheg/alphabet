@@ -1,19 +1,7 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class LetterBtn extends Component {
-  static propTypes = {
-    letter: PropTypes.string.isRequired,
-    picName: PropTypes.string.isRequired,
-    word: PropTypes.string.isRequired,
-    sound: PropTypes.string.isRequired,
-    getValues: PropTypes.func.isRequired,
-  }
-  constructor() {
-    super();
-
-    this.state = {};
-  }
-
   componentWillMount() {
     this.setState({
       letterValue: this.props.letter,
@@ -43,3 +31,11 @@ export default class LetterBtn extends Component {
     );
   }
 }
+
+LetterBtn.propTypes = {
+  letter: PropTypes.string.isRequired,
+  picName: PropTypes.string.isRequired,
+  word: PropTypes.string.isRequired,
+  sound: PropTypes.string.isRequired,
+  getValues: PropTypes.func.isRequired,
+};

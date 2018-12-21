@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactAudioPlayer from 'react-audio-player';
 import Word from './word';
 import MainLetter from './main_letter';
@@ -13,15 +14,7 @@ import awesomeSounds from '../../sounds/awesome/**.mp3';
 import ovationSound from '../../sounds/ovation.mp3';
 import alertSound from '../../sounds/not_right.mp3';
 
-export default class GameApp extends React.Component {
-  static propTypes = {
-    mute: PropTypes.bool, // Is app in sound or muted mode
-  }
-
-  static defaultProps = {
-    mute: false,
-  }
-
+export default class GameApp extends Component {
   constructor(props) {
     super(props);
 
@@ -87,7 +80,7 @@ export default class GameApp extends React.Component {
       if (this.state.isTrue) {
         this.setState({
           counter: this.state.counter += 1,
-        }, this.awesomeSound.audioEl.play);
+        }, () => this.awesomeSound.audioEl.play());
       } else {
         this.alertSound.audioEl.play();
       }
@@ -179,3 +172,11 @@ export default class GameApp extends React.Component {
     );
   }
 }
+
+GameApp.propTypes = {
+  mute: PropTypes.bool, // Is app in sound or muted mode
+};
+
+GameApp.defaultProps = {
+  mute: false,
+};

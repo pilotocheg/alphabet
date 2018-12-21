@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable class-methods-use-this */
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import pic1 from '../../img/pic.jpg';
 import pic2 from '../../img/pic-1.jpg';
 
-export default class Home extends React.Component {
+export default class Home extends Component {
   constructor() {
     super();
 

@@ -1,17 +1,7 @@
-import React, { PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class StarImg extends React.Component {
-  static propTypes = {
-    counter: PropTypes.number,
-    ownNumber: PropTypes.number,
-    src: PropTypes.string.isRequired,
-  }
-
-  static defaultProps = {
-    counter: 0,
-    ownNumber: 0,
-  }
-
+export default class StarImg extends Component {
   constructor(props) {
     super(props);
 
@@ -59,3 +49,14 @@ export default class StarImg extends React.Component {
     );
   }
 }
+
+StarImg.propTypes = {
+  counter: PropTypes.number,
+  ownNumber: PropTypes.number,
+  src: PropTypes.string.isRequired,
+};
+
+StarImg.defaultProps = {
+  counter: 0,
+  ownNumber: 0,
+};

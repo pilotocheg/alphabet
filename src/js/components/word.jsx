@@ -1,17 +1,7 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class Word extends Component {
-  static propTypes = {
-    mode: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    word: PropTypes.string.isRequired,
-    handleSound: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    handleSound: false,
-  }
-
   componentDidMount() {
     if (this.props.mode === 'game') {
       this.startAnimation(700);
@@ -50,3 +40,14 @@ export default class Word extends Component {
     );
   }
 }
+
+Word.propTypes = {
+  mode: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  word: PropTypes.string.isRequired,
+  handleSound: PropTypes.bool,
+};
+
+Word.defaultProps = {
+  handleSound: false,
+};
