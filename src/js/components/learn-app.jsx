@@ -17,51 +17,65 @@ export default class LearnApp extends Component {
     this.state = {
       letter: '',
     };
+
+    this.onPlayLetterSound = this.onPlayLetterSound.bind(this);
+    this.onPlayWordSound = this.onPlayWordSound.bind(this);
+    this.getValues = this.getValues.bind(this);
   }
   onPlayLetterSound() {
     this.letterSound.audioEl.play();
   }
 
   onPlayWordSound() {
-    this.setState({
-      renderPic: true,
-    });
+    this.setState({ renderPic: true });
     this.wordSound.audioEl.play();
   }
 
   getValues(letter, picName, word, soundName) {
-    if (this.state.renderPic) this.state.renderPic = false;
+    if (this.state.renderPic) {
+      this.state.renderPic = false;
+    }
     this.mainSound.audioEl.play();
-    const colorWord = word.replace(letter, `<span>${letter}</span>`);
+
     this.setState({
       letter,
       picName: images[picName],
-      word: colorWord,
+      word: word.replace(letter, `<span>${letter}</span>`),
       sound: sounds[soundName],
       sound2: sounds[`${soundName}_w`],
     });
   }
 
   render() {
+    const { mute } = this.props;
+    const {
+      renderPic,
+      picName,
+      letter,
+      sound2,
+      sound,
+      word,
+    } = this.state;
+
     return (
       <div className="main-container">
         <MainLetter
           id="learn-letter"
           mode="learn"
-          bigLetter={this.state.letter}
-          renderPic={this.state.renderPic}
-          handleSound={this.props.mute}
+          bigLetter={letter}
+          renderPic={renderPic}
+          handleSound={mute}
         />
         <div id="picture">
           <Pic
-            src={this.state.renderPic ? this.state.picName : ''}
-            handleSound={this.props.mute}
+            src={renderPic ? picName : ''}
+            handleSound={mute}
           />
           <Word
             id="learn-word"
             mode="learn"
-            word={this.state.renderPic ? this.state.word : ''}
-            handleSound={this.props.mute}
+            word={renderPic ? word : ''}
+            handleSound={mute}
           />
         </div>
         <div id="buttons-container">
@@ -72,26 +86,26 @@ export default class LearnApp extends Component {
               picName={el.pic}
               word={el.word}
               sound={el.sound}
-              getValues={this.getValues.bind(this)}
+              getValues={this.getValues}
             />))
           }
         </div>
         <ReactAudioPlayer
           src={mainWord}
           ref={(elem) => { this.mainSound = elem; }}
-          onEnded={this.onPlayLetterSound.bind(this)}
-          muted={this.props.mute}
+          onEnded={this.onPlayLetterSound}
+          muted={mute}
         />
         <ReactAudioPlayer
-          src={this.state.sound}
+          src={sound}
           ref={(elem) => { this.letterSound = elem; }}
-          onEnded={this.onPlayWordSound.bind(this)}
-          muted={this.props.mute}
+          onEnded={this.onPlayWordSound}
+          muted={mute}
         />
         <ReactAudioPlayer
-          src={this.state.sound2}
+          src={sound2}
           ref={(elem) => { this.wordSound = elem; }}
-          muted={this.props.mute}
+          muted={mute}
         />
       </div>
     );
