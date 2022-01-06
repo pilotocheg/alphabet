@@ -18,7 +18,6 @@ export default class StarImg extends Component {
         if (!this.state.animDone) this.elemAnimation(700);
       });
     }
-    if (!nextProps.counter) this.setState({ opacity: 0 });
   }
 
   elemAnimation(duration) {

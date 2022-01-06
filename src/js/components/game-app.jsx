@@ -130,14 +130,17 @@ export default class GameApp extends Component {
           {
             this.state.hideStars
             ||
-            this.state.starsArr.map((img, i) => (
-              <StarImg
-                src={img}
-                key={Math.random()}
-                ownNumber={(i + 1)}
-                counter={this.state.counter}
-              />
-            ))
+            this.state.starsArr.map((img, i) => {
+              const key = i + 1;
+              return (
+                <StarImg
+                  src={img}
+                  key={key}
+                  ownNumber={key}
+                  counter={this.state.counter}
+                />
+              );
+            })
           }
         </div>
         <ReactAudioPlayer
